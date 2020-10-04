@@ -8,6 +8,8 @@ import models.User;
 import seabattlegui.ISeaBattleGUI;
 import seabattlegui.ShipType;
 
+import java.util.ArrayList;
+
 /**
  * Interface provided by the Sea Battle game to the graphical user interface.
  * @author Nico Kuijpers
@@ -120,4 +122,6 @@ public interface ISeaBattleGame {
      * @param playerNr identification of player who starts a new game
      */
     public void startNewGame(int playerNr);
+
+    ArrayList<Ship> getShips(int playerNr);
 }

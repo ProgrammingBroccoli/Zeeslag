@@ -60,4 +60,8 @@ public class GameData {
     public void removeAllShips(int playerNr) {
         ships.removeIf(ship -> ship.playerNr == playerNr);
     }
+
+    public ArrayList<Ship> getShips(int playerNr) {
+        return ships;
+    }
 }

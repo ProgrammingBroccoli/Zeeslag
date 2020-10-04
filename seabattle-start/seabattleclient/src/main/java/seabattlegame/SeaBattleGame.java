@@ -11,6 +11,8 @@ import seabattlegui.GameData;
 import seabattlegui.ISeaBattleGUI;
 import seabattlegui.ShipType;
 
+import java.util.ArrayList;
+
 /**
  * The Sea Battle game. To be implemented.
  *
@@ -67,5 +69,10 @@ public class SeaBattleGame implements ISeaBattleGame {
   @Override
   public void startNewGame(int playerNr) {
     throw new UnsupportedOperationException("Method startNewGame() not implemented.");
+  }
+
+  @Override
+  public ArrayList<Ship> getShips(int playerNr) {
+    return gameData.getShips(playerNr);
   }
 }

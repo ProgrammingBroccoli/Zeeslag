@@ -836,7 +836,7 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
                     }
                 }
             }else{
-                showMessage("ERROR: Ship cant be placed outside of the field");
+                showMessage("ERROR: Ship cant be placed outside of the field, OR COLLIDES WITH OTHER SHIPS");
             }
             }else {
             showMessage("Select square in " + playerName + "\'s grid to place ship");
@@ -968,26 +968,45 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
         launch(args);
     }
     public boolean checkIfPlaceable(int posX, int posY, int length, boolean horizontal){
+        ArrayList<Ship> ships = game.getShips(playerNr);
+        boolean placeable = false;
+        boolean xContains = false;
+        boolean yContains = false;
+        for (Ship ship: ships) {
 
-        if (horizontal){
-            //horizontal
-            if (posX + length > 10){
-                //not placeable
-                return false;
+            for (int i = 0; i < ship.bowX; i++) {
+                if (posX == i) {
+                    xContains = true;
+                }
             }
-            else{
-                //placeable
-                return true;
-            }
-        }else {
-            //vertical
-            if (posY + length > 10){
-                //not placeable
-                return false;
-            } else {
-                //placeable
-                return true;
+            for (int i = 0; i < ship.bowY; i++) {
+                if (posY == i) {
+                    yContains = true;
+                }
             }
         }
+            if(ships.isEmpty() || !(xContains && yContains)){
+                if (horizontal){
+                    //horizontal
+                    if (posX + length > 10){
+                        //not placeable
+                        placeable = false;
+                    }
+                    else{
+                        //placeable
+                        placeable = true;
+                    }
+                }else {
+                    //vertical
+                    if (posY + length > 10){
+                        //not placeable
+                        placeable = false;
+                    } else {
+                        //placeable
+                        placeable = true;
+                    }
+                }
+            }
+     return placeable;
     }
 }
