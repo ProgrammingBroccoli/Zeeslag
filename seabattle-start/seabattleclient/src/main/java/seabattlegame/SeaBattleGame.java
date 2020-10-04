@@ -26,11 +26,10 @@ public class SeaBattleGame implements ISeaBattleGame {
   private static final Logger log = LoggerFactory.getLogger(SeaBattleGame.class);
 
   @Override
-  public void registerPlayer(String name, String password, ISeaBattleGUI application, boolean singlePlayerMode) {
-    gameData.addUser(name, password, application, singlePlayerMode);
-    User user = gameData.getUser(1);
+  public User registerPlayer(String name, String password, ISeaBattleGUI application, boolean singlePlayerMode) {
+    User user =  gameData.addUser(name, password, application, singlePlayerMode);
     log.debug(user.toString());
-    //throw new UnsupportedOperationException("Method registerPlayer() not implemented.");
+    return user;
   }
 
   @Override

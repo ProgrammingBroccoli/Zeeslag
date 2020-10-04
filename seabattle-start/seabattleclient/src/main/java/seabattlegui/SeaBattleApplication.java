@@ -19,6 +19,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import models.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import seabattlegame.ISeaBattleGame;
@@ -748,7 +749,10 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
             showMessage("Enter your password before registering");
             return;
         }
-        game.registerPlayer(playerName, playerPassword, this, singlePlayerMode);
+        User user = game.registerPlayer(playerName, playerPassword, this, singlePlayerMode);
+        User opponent = game.registerPlayer("Yoshii", "wachtwoord", this, singlePlayerMode);
+        setPlayerNumber(user.id, user.username);
+        setOpponentName(user.id, opponent.username);
     }
     
     /**

@@ -10,3 +10,20 @@
 2020-10-04 14:38:54,098 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - Register Player Ruben - password Test
 2020-10-04 14:39:07,078 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
 2020-10-04 14:39:13,336 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Ruben
+2020-10-04 14:45:31,162 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-10-04 14:45:38,809 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Ruben
+2020-10-04 14:45:38,810 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Ruben - Player Ruben registered
+2020-10-04 14:48:10,409 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-10-04 14:48:26,559 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Ruben
+2020-10-04 14:48:26,560 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Ruben - Player Ruben registered
+2020-10-04 14:48:30,015 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Ruben - Select square in Ruben's grid to place ship
+2020-10-04 14:54:00,651 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-10-04 14:54:07,996 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Ruben
+2020-10-04 14:54:07,996 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 2 Username = Yoshii
+2020-10-04 14:54:07,997 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Ruben - Player Ruben registered
+2020-10-04 14:54:07,998 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Ruben - ERROR: Wrong player number method setOpponentName()
+2020-10-04 14:55:42,710 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-10-04 14:55:52,246 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Ruben
+2020-10-04 14:55:52,246 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 2 Username = Yoshii
+2020-10-04 14:55:52,247 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Ruben - Player Ruben registered
+2020-10-04 14:55:52,249 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Ruben - Your opponent is Yoshii

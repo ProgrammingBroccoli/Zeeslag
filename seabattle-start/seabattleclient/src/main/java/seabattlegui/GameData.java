@@ -15,9 +15,11 @@ public class GameData {
         users = new ArrayList<User>();
     }
 
-    public void addUser(String username, String password, ISeaBattleGUI application, boolean singleplayer){
+    public User addUser(String username, String password, ISeaBattleGUI application, boolean singleplayer){
         User user = new User(username, password, application, singleplayer);
+        user.id = users.size()+1;
         users.add(user);
+        return user;
     }
     public User getUser(int id){
         User returningUser = null;

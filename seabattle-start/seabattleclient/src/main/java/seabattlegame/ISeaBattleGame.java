@@ -3,6 +3,7 @@
  */
 package seabattlegame;
 
+import models.User;
 import seabattlegui.ISeaBattleGUI;
 import seabattlegui.ShipType;
 
@@ -27,7 +28,7 @@ public interface ISeaBattleGame {
      * number of players exceeds two in multi-player mode or
      * name is already registered.
      */
-    public void registerPlayer(String name, String password, ISeaBattleGUI application, boolean singlePlayerMode);
+    public User registerPlayer(String name, String password, ISeaBattleGUI application, boolean singlePlayerMode);
     
     /**
      * Place ships automatically. Ships that are already placed will be removed. 
