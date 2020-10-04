@@ -39,17 +39,20 @@ public class SeaBattleGame implements ISeaBattleGame {
 
   @Override
   public void placeShip(int playerNr, ShipType shipType, int bowX, int bowY, boolean horizontal) {
-    throw new UnsupportedOperationException("Method placeShip() not implemented.");
+    gameData.addShip(playerNr, shipType, bowX, bowY, horizontal);
+    //throw new UnsupportedOperationException("Method placeShip() VISUAL not implemented.");
   }
 
   @Override
   public void removeShip(int playerNr, int posX, int posY) {
-    throw new UnsupportedOperationException("Method removeShip() not implemented.");
+    removeShip(playerNr, posX, posY);
+    throw new UnsupportedOperationException("Method removeShip()VISUAL not implemented.");
   }
 
   @Override
   public void removeAllShips(int playerNr) {
-    throw new UnsupportedOperationException("Method removeAllShips() not implemented.");
+    gameData.removeAllShips(playerNr);
+    throw new UnsupportedOperationException("Method removeAllShips()VISUAL not implemented.");
   }
 
   @Override

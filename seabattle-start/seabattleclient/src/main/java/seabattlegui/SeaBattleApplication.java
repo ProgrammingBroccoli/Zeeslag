@@ -812,6 +812,80 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
             int bowX = selectedSquareX;
             int bowY = selectedSquareY;
             game.placeShip(playerNr, shipType, bowX, bowY, horizontal);
+
+            if (horizontal){
+                //horizontal
+                switch (shipType){
+                    case MINESWEEPER:
+                        //SIZE:2
+                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY, SquareState.SHIP);
+                        showSquarePlayer(playerNr, selectedSquareX + 1, selectedSquareY, SquareState.SHIP);
+                        break;
+                    case SUBMARINE:
+                        //SIZE:3
+                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY, SquareState.SHIP);
+                        showSquarePlayer(playerNr, selectedSquareX + 1, selectedSquareY, SquareState.SHIP);
+                        showSquarePlayer(playerNr, selectedSquareX + 2, selectedSquareY, SquareState.SHIP);
+                        break;
+                    case CRUISER:
+                        //SIZE:3
+                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY, SquareState.SHIP);
+                        showSquarePlayer(playerNr, selectedSquareX + 1, selectedSquareY, SquareState.SHIP);
+                        showSquarePlayer(playerNr, selectedSquareX + 2, selectedSquareY, SquareState.SHIP);
+                        break;
+                    case BATTLESHIP:
+                        //SIZE:4
+                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY, SquareState.SHIP);
+                        showSquarePlayer(playerNr, selectedSquareX + 1, selectedSquareY, SquareState.SHIP);
+                        showSquarePlayer(playerNr, selectedSquareX + 2 , selectedSquareY, SquareState.SHIP);
+                        showSquarePlayer(playerNr, selectedSquareX + 3, selectedSquareY, SquareState.SHIP);
+                        break;
+                    case AIRCRAFTCARRIER:
+                        //SIZE 5
+                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY, SquareState.SHIP);
+                        showSquarePlayer(playerNr, selectedSquareX + 1, selectedSquareY, SquareState.SHIP);
+                        showSquarePlayer(playerNr, selectedSquareX + 2, selectedSquareY, SquareState.SHIP);
+                        showSquarePlayer(playerNr, selectedSquareX + 3, selectedSquareY, SquareState.SHIP);
+                        showSquarePlayer(playerNr, selectedSquareX + 4, selectedSquareY, SquareState.SHIP);
+                }
+            }else{
+                //vertical
+                switch (shipType){
+                    case MINESWEEPER:
+                        //SIZE:2
+                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY, SquareState.SHIP);
+                        showSquarePlayer(playerNr, selectedSquareX , selectedSquareY + 1, SquareState.SHIP);
+                        break;
+                    case SUBMARINE:
+                        //SIZE:3
+                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY, SquareState.SHIP);
+                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY + 1, SquareState.SHIP);
+                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY + 2, SquareState.SHIP);
+                        break;
+                    case CRUISER:
+                        //SIZE:3
+                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY, SquareState.SHIP);
+                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY + 1, SquareState.SHIP);
+                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY + 2, SquareState.SHIP);
+                        break;
+                    case BATTLESHIP:
+                        //SIZE:4
+                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY, SquareState.SHIP);
+                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY + 1, SquareState.SHIP);
+                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY + 2, SquareState.SHIP);
+                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY + 3, SquareState.SHIP);
+                        break;
+                    case AIRCRAFTCARRIER:
+                        //SIZE 5
+                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY, SquareState.SHIP);
+                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY + 1, SquareState.SHIP);
+                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY + 2, SquareState.SHIP);
+                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY + 3, SquareState.SHIP);
+                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY + 4, SquareState.SHIP);
+                }
+            }
+            //showSquarePlayer(int playerNr, final int posX,final int posY,final SquareState squareState)
+
         }
         else {
             showMessage("Select square in " + playerName + "\'s grid to place ship");

@@ -27,3 +27,34 @@
 2020-10-04 14:55:52,246 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 2 Username = Yoshii
 2020-10-04 14:55:52,247 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Ruben - Player Ruben registered
 2020-10-04 14:55:52,249 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Ruben - Your opponent is Yoshii
+2020-10-04 15:17:56,851 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-10-04 15:18:03,503 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Ruben
+2020-10-04 15:18:03,504 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 2 Username = Yoshii
+2020-10-04 15:18:03,505 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Ruben - Player Ruben registered
+2020-10-04 15:18:03,506 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Ruben - Your opponent is Yoshii
+2020-10-04 15:18:38,440 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-10-04 15:18:56,403 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-10-04 15:19:04,793 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = JhonnyTest
+2020-10-04 15:19:04,793 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 2 Username = Yoshii
+2020-10-04 15:19:04,794 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for JhonnyTest - Player JhonnyTest registered
+2020-10-04 15:19:04,795 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for JhonnyTest - Your opponent is Yoshii
+2020-10-04 15:27:06,934 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-10-04 15:27:14,355 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Ruben
+2020-10-04 15:27:14,355 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 2 Username = Yoshii
+2020-10-04 15:27:14,356 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Ruben - Player Ruben registered
+2020-10-04 15:27:14,358 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Ruben - Your opponent is Yoshii
+2020-10-04 15:32:02,497 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-10-04 15:32:12,998 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = JhonnyTest
+2020-10-04 15:32:12,999 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 2 Username = Yoshii
+2020-10-04 15:32:13,000 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for JhonnyTest - Player JhonnyTest registered
+2020-10-04 15:32:13,002 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for JhonnyTest - Your opponent is Yoshii
+2020-10-04 15:36:14,041 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-10-04 15:36:21,592 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = JhonnyTest
+2020-10-04 15:36:21,592 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 2 Username = Yoshii
+2020-10-04 15:36:21,593 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for JhonnyTest - Player JhonnyTest registered
+2020-10-04 15:36:21,595 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for JhonnyTest - Your opponent is Yoshii
+2020-10-04 15:41:36,534 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-10-04 15:41:45,860 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Jhonny Test
+2020-10-04 15:41:45,860 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 2 Username = Yoshii
+2020-10-04 15:41:45,861 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Test - Player Jhonny Test registered
+2020-10-04 15:41:45,864 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Test - Your opponent is Yoshii
