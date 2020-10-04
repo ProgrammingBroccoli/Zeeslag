@@ -33,10 +33,11 @@ public class GameData {
         }
         return returningUser;
     }
-    public void addShip(int playerNr, ShipType shipType, int bowX, int bowY, boolean horizontal){
+    public Ship addShip(int playerNr, ShipType shipType, int bowX, int bowY, boolean horizontal){
         Ship ship = new Ship(playerNr, shipType, bowX, bowY, horizontal);
         ship.id = ships.size() + 1;
         ships.add(ship);
+        return ship;
     }
     public void getShip(int id){
         Ship returningShip = null;

@@ -19,12 +19,14 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import models.Ship;
 import models.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import seabattlegame.ISeaBattleGame;
 import seabattlegame.SeaBattleGame;
 
+import java.util.*;
 
 
 /**
@@ -34,7 +36,7 @@ import seabattlegame.SeaBattleGame;
 public class SeaBattleApplication extends Application implements ISeaBattleGUI {
 
     private static final Logger log = LoggerFactory.getLogger(SeaBattleApplication.class);
-    
+
     // Constants to define size of GUI elements
     private final int BORDERSIZE = 10; // Size of borders in pixels
     private final int AREAWIDTH = 400; // Width of area in pixels
@@ -128,7 +130,8 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
     // X and y-position of selected square in ocean region
     private int selectedSquareX;
     private int selectedSquareY;
-     
+
+
     @Override
     public void start(Stage primaryStage) {
 
@@ -808,86 +811,34 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
      *                    vertically.
      */
     private void placeShipAtSelectedSquare(ShipType shipType, boolean horizontal) {
+        Map<ShipType, Integer> shipLenghts = new HashMap<ShipType, Integer>();
+        shipLenghts.put(ShipType.MINESWEEPER, 2);
+        shipLenghts.put(ShipType.SUBMARINE, 3);
+        shipLenghts.put(ShipType.CRUISER, 3);
+        shipLenghts.put(ShipType.BATTLESHIP, 4);
+        shipLenghts.put(ShipType.AIRCRAFTCARRIER, 5);
+
         if (squareSelectedInOceanArea) {
             int bowX = selectedSquareX;
             int bowY = selectedSquareY;
-            game.placeShip(playerNr, shipType, bowX, bowY, horizontal);
+            if( checkIfPlaceable(selectedSquareX, selectedSquareY,shipLenghts.get(shipType), horizontal)){
+                Ship ship = game.placeShip(playerNr, shipType, bowX, bowY, horizontal);
 
-            if (horizontal){
-                //horizontal
-                switch (shipType){
-                    case MINESWEEPER:
-                        //SIZE:2
-                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY, SquareState.SHIP);
-                        showSquarePlayer(playerNr, selectedSquareX + 1, selectedSquareY, SquareState.SHIP);
-                        break;
-                    case SUBMARINE:
-                        //SIZE:3
-                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY, SquareState.SHIP);
-                        showSquarePlayer(playerNr, selectedSquareX + 1, selectedSquareY, SquareState.SHIP);
-                        showSquarePlayer(playerNr, selectedSquareX + 2, selectedSquareY, SquareState.SHIP);
-                        break;
-                    case CRUISER:
-                        //SIZE:3
-                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY, SquareState.SHIP);
-                        showSquarePlayer(playerNr, selectedSquareX + 1, selectedSquareY, SquareState.SHIP);
-                        showSquarePlayer(playerNr, selectedSquareX + 2, selectedSquareY, SquareState.SHIP);
-                        break;
-                    case BATTLESHIP:
-                        //SIZE:4
-                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY, SquareState.SHIP);
-                        showSquarePlayer(playerNr, selectedSquareX + 1, selectedSquareY, SquareState.SHIP);
-                        showSquarePlayer(playerNr, selectedSquareX + 2 , selectedSquareY, SquareState.SHIP);
-                        showSquarePlayer(playerNr, selectedSquareX + 3, selectedSquareY, SquareState.SHIP);
-                        break;
-                    case AIRCRAFTCARRIER:
-                        //SIZE 5
-                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY, SquareState.SHIP);
-                        showSquarePlayer(playerNr, selectedSquareX + 1, selectedSquareY, SquareState.SHIP);
-                        showSquarePlayer(playerNr, selectedSquareX + 2, selectedSquareY, SquareState.SHIP);
-                        showSquarePlayer(playerNr, selectedSquareX + 3, selectedSquareY, SquareState.SHIP);
-                        showSquarePlayer(playerNr, selectedSquareX + 4, selectedSquareY, SquareState.SHIP);
+                if (horizontal){
+                    //horizontal
+                    for (int i = 0; i<ship.length; i++){
+                        showSquarePlayer(playerNr, selectedSquareX + i, selectedSquareY, SquareState.SHIP);
+                    }
+                }else{
+                    //vertical
+                    for (int i = 0; i<ship.length; i++){
+                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY + i, SquareState.SHIP);
+                    }
                 }
             }else{
-                //vertical
-                switch (shipType){
-                    case MINESWEEPER:
-                        //SIZE:2
-                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY, SquareState.SHIP);
-                        showSquarePlayer(playerNr, selectedSquareX , selectedSquareY + 1, SquareState.SHIP);
-                        break;
-                    case SUBMARINE:
-                        //SIZE:3
-                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY, SquareState.SHIP);
-                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY + 1, SquareState.SHIP);
-                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY + 2, SquareState.SHIP);
-                        break;
-                    case CRUISER:
-                        //SIZE:3
-                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY, SquareState.SHIP);
-                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY + 1, SquareState.SHIP);
-                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY + 2, SquareState.SHIP);
-                        break;
-                    case BATTLESHIP:
-                        //SIZE:4
-                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY, SquareState.SHIP);
-                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY + 1, SquareState.SHIP);
-                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY + 2, SquareState.SHIP);
-                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY + 3, SquareState.SHIP);
-                        break;
-                    case AIRCRAFTCARRIER:
-                        //SIZE 5
-                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY, SquareState.SHIP);
-                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY + 1, SquareState.SHIP);
-                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY + 2, SquareState.SHIP);
-                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY + 3, SquareState.SHIP);
-                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY + 4, SquareState.SHIP);
-                }
+                showMessage("ERROR: Ship cant be placed outside of the field");
             }
-            //showSquarePlayer(int playerNr, final int posX,final int posY,final SquareState squareState)
-
-        }
-        else {
+            }else {
             showMessage("Select square in " + playerName + "\'s grid to place ship");
         }
     }
@@ -1015,5 +966,28 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
      */
     public static void main(String[] args) {
         launch(args);
+    }
+    public boolean checkIfPlaceable(int posX, int posY, int length, boolean horizontal){
+
+        if (horizontal){
+            //horizontal
+            if (posX + length > 10){
+                //not placeable
+                return false;
+            }
+            else{
+                //placeable
+                return true;
+            }
+        }else {
+            //vertical
+            if (posY + length > 10){
+                //not placeable
+                return false;
+            } else {
+                //placeable
+                return true;
+            }
+        }
     }
 }

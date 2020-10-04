@@ -58,3 +58,17 @@
 2020-10-04 15:41:45,860 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 2 Username = Yoshii
 2020-10-04 15:41:45,861 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Test - Player Jhonny Test registered
 2020-10-04 15:41:45,864 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Test - Your opponent is Yoshii
+2020-10-04 15:51:17,505 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-10-04 15:51:26,823 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Jhonny Test
+2020-10-04 15:51:26,823 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 2 Username = Yoshii
+2020-10-04 15:51:26,824 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Test - Player Jhonny Test registered
+2020-10-04 15:51:26,826 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Test - Your opponent is Yoshii
+2020-10-04 15:56:36,242 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-10-04 15:57:23,266 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-10-04 16:12:21,701 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-10-04 16:12:31,096 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Jhonny Test
+2020-10-04 16:12:31,097 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 2 Username = Yoshii
+2020-10-04 16:12:31,098 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Test - Player Jhonny Test registered
+2020-10-04 16:12:31,099 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Test - Your opponent is Yoshii
+2020-10-04 16:12:36,056 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Test - ERROR: Ship cant be placed outside of the field
+2020-10-04 16:12:47,726 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Test - ERROR: Ship cant be placed outside of the field

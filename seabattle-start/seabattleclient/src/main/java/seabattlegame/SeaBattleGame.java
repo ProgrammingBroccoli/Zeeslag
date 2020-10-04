@@ -3,14 +3,13 @@
  */
 package seabattlegame;
 
+import models.Ship;
 import models.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import seabattlegui.GameData;
 import seabattlegui.ISeaBattleGUI;
 import seabattlegui.ShipType;
-
-import java.io.Console;
 
 /**
  * The Sea Battle game. To be implemented.
@@ -38,8 +37,8 @@ public class SeaBattleGame implements ISeaBattleGame {
   }
 
   @Override
-  public void placeShip(int playerNr, ShipType shipType, int bowX, int bowY, boolean horizontal) {
-    gameData.addShip(playerNr, shipType, bowX, bowY, horizontal);
+  public Ship placeShip(int playerNr, ShipType shipType, int bowX, int bowY, boolean horizontal) {
+    return gameData.addShip(playerNr, shipType, bowX, bowY, horizontal);
     //throw new UnsupportedOperationException("Method placeShip() VISUAL not implemented.");
   }
 
