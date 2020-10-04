@@ -3,10 +3,14 @@
  */
 package seabattlegame;
 
+import models.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import seabattlegui.GameData;
 import seabattlegui.ISeaBattleGUI;
 import seabattlegui.ShipType;
+
+import java.io.Console;
 
 /**
  * The Sea Battle game. To be implemented.
@@ -14,12 +18,18 @@ import seabattlegui.ShipType;
  * @author Nico Kuijpers
  */
 public class SeaBattleGame implements ISeaBattleGame {
+  GameData gameData;
+  public SeaBattleGame(){
+    gameData = new GameData();
+  }
 
   private static final Logger log = LoggerFactory.getLogger(SeaBattleGame.class);
 
   @Override
   public void registerPlayer(String name, String password, ISeaBattleGUI application, boolean singlePlayerMode) {
-    log.debug("Register Player {} - password {}", name, password);
+    gameData.addUser(name, password, application, singlePlayerMode);
+    User user = gameData.getUser(1);
+    log.debug(user.toString());
     //throw new UnsupportedOperationException("Method registerPlayer() not implemented.");
   }
 

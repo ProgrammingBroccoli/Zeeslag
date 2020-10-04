@@ -1,2 +1,12 @@
 2020-10-04 14:02:11,809 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
 2020-10-04 14:02:18,753 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for  - Select square in 's grid to place ships
+2020-10-04 14:16:01,736 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-10-04 14:16:09,486 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - Register Player Ruben - password Test
+2020-10-04 14:37:16,192 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-10-04 14:37:25,048 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - models.User@7173ef69
+2020-10-04 14:37:25,048 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - Register Player Ruben - password Brocco
+2020-10-04 14:38:48,618 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-10-04 14:38:54,097 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Ruben
+2020-10-04 14:38:54,098 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - Register Player Ruben - password Test
+2020-10-04 14:39:07,078 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-10-04 14:39:13,336 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Ruben
