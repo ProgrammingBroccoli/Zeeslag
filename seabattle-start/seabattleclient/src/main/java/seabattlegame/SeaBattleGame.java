@@ -34,7 +34,7 @@ public class SeaBattleGame implements ISeaBattleGame {
 
   @Override
   public void placeShipsAutomatically(int playerNr) {
-    //throw new UnsupportedOperationException("Method placeShipsAutomatically() not implemented.");
+
   }
 
   @Override

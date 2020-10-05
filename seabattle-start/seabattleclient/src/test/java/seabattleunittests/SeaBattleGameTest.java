@@ -8,10 +8,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import seabattlegame.ISeaBattleGame;
 import seabattlegame.SeaBattleGame;
+import seabattlegui.GameData;
+import seabattlegui.ShipType;
 import seabattlegui.SquareState;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 /**
@@ -80,8 +81,53 @@ class SeaBattleGameTest {
         int actualResult = applicationPlayer.numberSquaresPlayerWithSquareState(SquareState.SHIP);
         assertEquals(expectedResult,actualResult, "Wrong number of squares where ships are placed");
     }
-    
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. 
+
+    @Test
+    void removeShip()
+    {
+        // Register player in single-player mode
+        game.registerPlayer("Some Name", "Some Password", applicationPlayer, true);
+        int playerNr = applicationPlayer.getPlayerNumber();
+
+        // Place and remove ship
+        game.placeShip(playerNr,ShipType.BATTLESHIP,0,0,true);
+        game.removeShip(playerNr,0,0);
+
+        // Count number of squares where ships are placed in player's application
+        int expectedResult = 0;
+        int actualresult = applicationPlayer.numberSquaresOpponentWithSquareState(SquareState.SHIP);
+        assertEquals(expectedResult,actualresult);
+    }
+
+    @Test
+    void firedShotHits()
+    {
+        // Register player in single-player mode
+        game.registerPlayer("Some Name", "Some Password", applicationPlayer, true);
+        int playerNr = applicationPlayer.getPlayerNumber();
+
+        game.placeShip(playerNr,ShipType.BATTLESHIP,0,0,true);
+        game.fireShot(playerNr,0,0);
+
+        int expectedResult = applicationOpponent.numberSquaresOpponentWithSquareState(SquareState.SHOTHIT);
+        int actualresult = applicationPlayer.numberSquaresOpponentWithSquareState(SquareState.SHOTHIT);
+        assertEquals(expectedResult,actualresult);
+    }
+
+    @Test
+    void firedShotMiss()
+    {
+        // Register player in single-player mode
+        game.registerPlayer("Some Name", "Some Password", applicationPlayer, true);
+        int playerNr = applicationPlayer.getPlayerNumber();
+
+        game.placeShip(playerNr,ShipType.BATTLESHIP,0,0,true);
+        game.fireShot(playerNr,0,0);
+
+        int expectedResult = applicationOpponent.numberSquaresOpponentWithSquareState(SquareState.SHOTMISSED);
+        int actualresult = applicationPlayer.numberSquaresOpponentWithSquareState(SquareState.SHOTMISSED);
+        assertEquals(expectedResult,actualresult);
+    }
+
 }
 

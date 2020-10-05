@@ -4,9 +4,6 @@ import models.Ship;
 import models.User;
 
 import java.util.ArrayList;
-import java.util.Dictionary;
-import java.util.HashMap;
-import java.util.Map;
 
 public class GameData {
 
@@ -58,5 +55,9 @@ public class GameData {
 
     public void removeAllShips(int playerNr) {
         ships.removeIf(ship -> ship.playerNr == playerNr);
+    }
+
+    public ArrayList<Ship> getShips(){
+        return ships;
     }
 }
