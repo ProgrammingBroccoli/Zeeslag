@@ -1,0 +1,7 @@
+2020-10-04 15:50:14,711 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-10-05 09:54:44,369 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-10-05 09:55:01,255 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = sss
+2020-10-05 09:55:01,255 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 2 Username = Yoshii
+2020-10-05 09:55:01,260 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for sss - Player sss registered
+2020-10-05 09:55:01,267 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for sss - Your opponent is Yoshii
+2020-10-05 09:56:00,451 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for sss - Select square in sss's grid to place ship
