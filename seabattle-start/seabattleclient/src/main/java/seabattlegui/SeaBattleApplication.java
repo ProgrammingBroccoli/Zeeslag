@@ -974,18 +974,21 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
         boolean yContains = false;
         for (Ship ship: ships) {
 
+            //checks if length of new ship will collide with a ship
             for (int i = 0; i < ship.bowX; i++) {
                 if (posX == i) {
                     xContains = true;
                 }
             }
+            //checks if length of new ship will collide with a ship
+
             for (int i = 0; i < ship.bowY; i++) {
                 if (posY == i) {
                     yContains = true;
                 }
             }
         }
-            if(ships.isEmpty() || !(xContains && yContains)){
+            if(ships.isEmpty() || !(xContains || yContains)){
                 if (horizontal){
                     //horizontal
                     if (posX + length > 10){

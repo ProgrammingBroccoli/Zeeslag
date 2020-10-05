@@ -46,7 +46,7 @@ public class SeaBattleGame implements ISeaBattleGame {
 
   @Override
   public void removeShip(int playerNr, int posX, int posY) {
-    removeShip(playerNr, posX, posY);
+    gameData.removeShip(playerNr, posX, posY);
     throw new UnsupportedOperationException("Method removeShip()VISUAL not implemented.");
   }
 
