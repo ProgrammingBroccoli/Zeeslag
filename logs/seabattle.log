@@ -16,3 +16,45 @@
 2020-10-11 20:34:44,140 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Test - Player Jhonny Test registered
 2020-10-11 20:34:44,142 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Test - Your opponent is Yoshii
 2020-10-11 20:34:50,113 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Test - ERROR: Ship cant be placed outside of the field, OR COLLIDES WITH OTHER SHIPS
+2020-10-11 21:03:54,473 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-10-11 21:04:04,842 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Jhonny Rest
+2020-10-11 21:04:04,842 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 2 Username = Yoshii
+2020-10-11 21:04:04,843 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Rest - Player Jhonny Rest registered
+2020-10-11 21:04:04,845 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Rest - Your opponent is Yoshii
+2020-10-11 21:04:09,730 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Rest - ERROR: Ship cant be placed outside of the field, OR COLLIDES WITH OTHER SHIPS
+2020-10-11 21:04:56,535 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-10-11 21:05:06,972 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Jhonny Rest
+2020-10-11 21:05:06,973 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 2 Username = Yoshii
+2020-10-11 21:05:06,974 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Rest - Player Jhonny Rest registered
+2020-10-11 21:05:06,977 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Rest - Your opponent is Yoshii
+2020-10-11 21:06:18,891 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-10-11 21:06:22,689 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = r
+2020-10-11 21:06:22,689 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 2 Username = Yoshii
+2020-10-11 21:06:22,691 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for r - Player r registered
+2020-10-11 21:06:22,693 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for r - Your opponent is Yoshii
+2020-10-11 21:07:10,145 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-10-11 21:07:17,336 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Jhonny Rest
+2020-10-11 21:07:17,336 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 2 Username = Yoshii
+2020-10-11 21:07:17,337 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Rest - Player Jhonny Rest registered
+2020-10-11 21:07:17,338 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Rest - Your opponent is Yoshii
+2020-10-11 21:07:37,722 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-10-11 21:07:50,736 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = jhonny
+2020-10-11 21:07:50,737 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 2 Username = Yoshii
+2020-10-11 21:07:50,738 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for jhonny - Player jhonny registered
+2020-10-11 21:07:50,740 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for jhonny - Your opponent is Yoshii
+2020-10-11 21:11:45,092 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-10-11 21:11:51,774 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Jhonny 
+2020-10-11 21:11:51,774 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 2 Username = Yoshii
+2020-10-11 21:11:51,776 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny  - Player Jhonny  registered
+2020-10-11 21:11:51,779 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny  - Your opponent is Yoshii
+2020-10-11 21:14:34,316 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-10-11 21:14:42,103 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Jhonny Rest
+2020-10-11 21:14:42,103 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 2 Username = Yoshii
+2020-10-11 21:14:42,104 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Rest - Player Jhonny Rest registered
+2020-10-11 21:14:42,106 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Rest - Your opponent is Yoshii
+2020-10-11 21:15:22,515 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Rest - ERROR: Ship cant be placed outside of the field, OR COLLIDES WITH OTHER SHIPS
+2020-10-11 21:23:07,096 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-10-11 21:23:13,404 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Jhonny test
+2020-10-11 21:23:13,404 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 2 Username = Yoshii
+2020-10-11 21:23:13,405 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny test - Player Jhonny test registered
+2020-10-11 21:23:13,407 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny test - Your opponent is Yoshii

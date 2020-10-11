@@ -870,11 +870,13 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
                 //horizontal
                 for (int i = 0; i < ship.length; i++){
                     playerMap[ship.bowX + i][ship.bowY].setState(SquareState.WATER);
+                    showSquarePlayer(playerNr, ship.bowX + i, ship.bowY,SquareState.WATER);
                 }
             }else{
                 //vertical
                 for (int i = 0; i < ship.length; i++){
                     playerMap[ship.bowX][ship.bowY + i].setState(SquareState.WATER);
+                    showSquarePlayer(playerNr, ship.bowX, ship.bowY + i,SquareState.WATER);
                 }
             }
         }
