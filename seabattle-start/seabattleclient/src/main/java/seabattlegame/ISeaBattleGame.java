@@ -124,4 +124,5 @@ public interface ISeaBattleGame {
     public void startNewGame(int playerNr);
 
     ArrayList<Ship> getShips(int playerNr);
+    public boolean shipPlaced(int playerNr, ShipType shipType);
 }

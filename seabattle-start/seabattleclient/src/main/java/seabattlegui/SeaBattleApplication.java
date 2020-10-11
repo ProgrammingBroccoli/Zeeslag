@@ -396,7 +396,7 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
         buttonPlaceAircraftCarrier.setOnAction(new EventHandler() {
             @Override
             public void handle(Event event) {
-                placeShipAtSelectedSquare(ShipType.AIRCRAFTCARRIER,horizontal);
+                placeShipAtSelectedSquare(ShipType.AIRCRAFTCARRIER,horizontal, selectedSquareX, selectedSquareY);
             }
         });
         buttonPlaceAircraftCarrier.setDisable(true);
@@ -411,7 +411,7 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
         buttonPlaceBattleShip.setOnAction(new EventHandler() {
             @Override
             public void handle(Event event) {
-                placeShipAtSelectedSquare(ShipType.BATTLESHIP,horizontal);
+                placeShipAtSelectedSquare(ShipType.BATTLESHIP,horizontal, selectedSquareX, selectedSquareY);
             }
         });
         buttonPlaceBattleShip.setDisable(true);
@@ -426,7 +426,7 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
         buttonPlaceCruiser.setOnAction(new EventHandler() {
             @Override
             public void handle(Event event) {
-                placeShipAtSelectedSquare(ShipType.CRUISER,horizontal);
+                placeShipAtSelectedSquare(ShipType.CRUISER,horizontal, selectedSquareX, selectedSquareY);
             }
         });
         buttonPlaceCruiser.setDisable(true);
@@ -441,7 +441,7 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
         buttonPlaceSubmarine.setOnAction(new EventHandler() {
             @Override
             public void handle(Event event) {
-                placeShipAtSelectedSquare(ShipType.SUBMARINE,horizontal);
+                placeShipAtSelectedSquare(ShipType.SUBMARINE,horizontal, selectedSquareX, selectedSquareY);
             }
         });
         buttonPlaceSubmarine.setDisable(true);
@@ -456,7 +456,7 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
         buttonPlaceMineSweeper.setOnAction(new EventHandler() {
             @Override
             public void handle(Event event) {
-                placeShipAtSelectedSquare(ShipType.MINESWEEPER,horizontal);
+                placeShipAtSelectedSquare(ShipType.MINESWEEPER,horizontal, selectedSquareX, selectedSquareY);
             }
         });
         buttonPlaceMineSweeper.setDisable(true);
@@ -763,14 +763,25 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
         User opponent = game.registerPlayer("Yoshii", "wachtwoord", this, singlePlayerMode);
         setPlayerNumber(user.id, user.username);
         setOpponentName(user.id, opponent.username);
-    }
+    }                                                                              
 
     /**
      * Place the player's ships automatically.
      */
     private void placeShipsAutomatically() {
         // Place the player's ships automatically.
-        game.placeShipsAutomatically(playerNr);
+        Random random = new Random();
+        squareSelectedInOceanArea = true;
+        for (int i = 0; i < 5; i++){
+            Ship ship = null;
+            while (ship == null){
+                if(!game.shipPlaced(playerNr, ShipType.values()[i])){
+                    ship = placeShipAtSelectedSquare(ShipType.values()[i], random.nextBoolean(), random.nextInt(NRSQUARESHORIZONTAL), random.nextInt(NRSQUARESVERTICAL));
+                    System.out.println("HULPLIJJN?!");
+                }
+                else break;
+            }
+        }
     }
 
     /**
@@ -815,9 +826,10 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
      * of the ship.
      * @param shipType    type of the ship to be placed
      * @param horizontal  indicates whether ship should be placed horizontally or
-     *                    vertically.
+     * @return
      */
-    private void placeShipAtSelectedSquare(ShipType shipType, boolean horizontal) {
+
+    private Ship placeShipAtSelectedSquare(ShipType shipType, boolean horizontal, int bowX, int bowY) {
         Map<ShipType, Integer> shipLenghts = new HashMap<ShipType, Integer>();
         shipLenghts.put(ShipType.MINESWEEPER, 2);
         shipLenghts.put(ShipType.SUBMARINE, 3);
@@ -826,23 +838,23 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
         shipLenghts.put(ShipType.AIRCRAFTCARRIER, 5);
 
         if (squareSelectedInOceanArea) {
-            if (playerMap[selectedSquareX][selectedSquareY].getState() == SquareState.WATER){
-                int bowX = selectedSquareX;
-                int bowY = selectedSquareY;
-                if(checkBoundries(selectedSquareX, selectedSquareY,shipLenghts.get(shipType), horizontal)){
+            if (playerMap[bowX][bowY].getState() == SquareState.WATER){
+                //int bowX = selectedSquareX;
+                //int bowY = selectedSquareY;
+                if(checkBoundries(bowX, bowY,shipLenghts.get(shipType), horizontal)){
                     if(!checkCollision(bowX, bowY, shipLenghts.get(shipType), horizontal)) {
                         Ship ship = game.placeShip(playerNr, shipType, bowX, bowY, horizontal);
                         if (horizontal) {
                             //horizontal
                             for (int i = 0; i < ship.length; i++) {
-                                playerMap[selectedSquareX + i][selectedSquareY].setState(SquareState.SHIP);
-                                showSquarePlayer(playerNr, selectedSquareX + i, selectedSquareY, SquareState.SHIP);
+                                playerMap[bowX + i][bowY].setState(SquareState.SHIP);
+                                showSquarePlayer(playerNr, bowX + i, bowY, SquareState.SHIP);
                             }
                         } else {
                             //vertical
                             for (int i = 0; i < ship.length; i++) {
-                                playerMap[selectedSquareX][selectedSquareY + i].setState(SquareState.SHIP);
-                                showSquarePlayer(playerNr, selectedSquareX, selectedSquareY + i, SquareState.SHIP);
+                                playerMap[bowX][bowY + i].setState(SquareState.SHIP);
+                                showSquarePlayer(playerNr, bowX, bowY + i, SquareState.SHIP);
                             }
                         }
                     }
@@ -856,6 +868,7 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
                 showMessage("Select square in " + playerName + "\'s grid to place ship");
             }
         }
+        return null;
     }
 
     /**
@@ -956,7 +969,7 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
             if (squareSelectedInOceanArea) {
                 Rectangle square = squaresOceanArea[selectedSquareX][selectedSquareY];
                 if (square.getFill().equals(Color.YELLOW)) {
-                    square.setFill(Color.LIGHTBLUE);
+                    setSquareColor(square, playerMap[selectedSquareX][selectedSquareY].getState());
                 }
             }
             selectedSquareX = x;

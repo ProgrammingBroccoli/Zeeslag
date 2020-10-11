@@ -20,7 +20,8 @@ import java.util.ArrayList;
  */
 public class SeaBattleGame implements ISeaBattleGame {
   GameData gameData;
-  public SeaBattleGame(){
+
+  public SeaBattleGame() {
 
     gameData = new GameData();
   }
@@ -29,7 +30,7 @@ public class SeaBattleGame implements ISeaBattleGame {
 
   @Override
   public User registerPlayer(String name, String password, ISeaBattleGUI application, boolean singlePlayerMode) {
-    User user =  gameData.addUser(name, password, application, singlePlayerMode);
+    User user = gameData.addUser(name, password, application, singlePlayerMode);
     log.debug(user.toString());
     return user;
   }
@@ -39,13 +40,13 @@ public class SeaBattleGame implements ISeaBattleGame {
 
   }
 
-@Override
+  @Override
   public Ship placeShip(int playerNr, ShipType shipType, int bowX, int bowY, boolean horizontal) {
     return gameData.addShip(playerNr, shipType, bowX, bowY, horizontal);
     //throw new UnsupportedOperationException("Method placeShip() VISUAL not implemented.");
   }
 
-@Override
+  @Override
   public Ship removeShip(int playerNr, int posX, int posY) {
     return gameData.removeShip(playerNr, posX, posY);
     //throw new UnsupportedOperationException("Method removeShip()VISUAL not implemented.");
@@ -73,6 +74,14 @@ public class SeaBattleGame implements ISeaBattleGame {
   }
 
   public ArrayList<Ship> getShips(int playerNr) {
+
     return gameData.getShips(playerNr);
+  }
+
+  public boolean shipPlaced(int playerNr, ShipType shipType) {
+    for (Ship ship : gameData.getShips(playerNr)) {
+      if (ship.shipType == shipType) return true;
+    }
+    return false;
   }
 }
