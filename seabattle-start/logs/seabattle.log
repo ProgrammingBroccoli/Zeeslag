@@ -274,3 +274,4 @@
 2020-10-05 09:51:15,715 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Rest - Player Jhonny Rest registered
 2020-10-05 09:51:15,717 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Rest - Your opponent is Yoshii
 2020-10-05 09:51:18,029 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Rest - Select square in Jhonny Rest's grid to place ship
+2020-10-05 10:09:48,140 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Rest - ERROR: Ship cant be placed outside of the field, OR COLLIDES WITH OTHER SHIPS
