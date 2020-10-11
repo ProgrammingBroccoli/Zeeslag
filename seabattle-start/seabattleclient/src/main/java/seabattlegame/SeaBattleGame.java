@@ -38,7 +38,7 @@ public class SeaBattleGame implements ISeaBattleGame {
 
   }
 
-  @Override
+
   public Ship placeShip(int playerNr, ShipType shipType, int bowX, int bowY, boolean horizontal) {
     return gameData.addShip(playerNr, shipType, bowX, bowY, horizontal);
     //throw new UnsupportedOperationException("Method placeShip() VISUAL not implemented.");
@@ -71,7 +71,6 @@ public class SeaBattleGame implements ISeaBattleGame {
     throw new UnsupportedOperationException("Method startNewGame() not implemented.");
   }
 
-  @Override
   public ArrayList<Ship> getShips(int playerNr) {
     return gameData.getShips(playerNr);
   }

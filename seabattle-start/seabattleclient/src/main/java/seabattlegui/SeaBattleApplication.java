@@ -20,6 +20,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import models.Ship;
+import models.Square;
 import models.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -44,73 +45,75 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
     private final int SQUAREWIDTH = 36; // Width of single square in pixels
     private final int SQUAREHEIGHT = 36; // Height of single square in pixels
     private final int BUTTONWIDTH = 180; // Width of button
-    
+
     // Constants to define number of squares horizontal and vertical
     private final int NRSQUARESHORIZONTAL = 10;
     private final int NRSQUARESVERTICAL = 10;
-    
+
     // Opponent's name
     private String opponentName;
-    
+
     // Label for opponent's name
     private Label labelOpponentName;
-    
+
     // Target area, a 10 x 10 grid where the opponent's ships are placed
     private Rectangle targetArea;
-    
+
     // Squares for the target area
     private Rectangle[][] squaresTargetArea;
-    
+
     // Player's number (to be determined by the sea battle game)
     int playerNr = 0;
-    
+
     // Player's name
     private String playerName = null;
-    
+
     // Player that may fire a shot (player 0 or player 1)
     private int playerTurn = 0;
-    
+
     // Label for player's name
     private Label labelPlayerName;
-    
+
     // Text field to set player's name
     private Label labelYourName;
     private TextField textFieldPlayerName;
-    
+
     // Password field to set player's password
     private Label labelYourPassword;
     private PasswordField passwordFieldPlayerPassword;
-    
+
     // Ocean area, a 10 x 10 grid where the player's ships are placed
     private Rectangle oceanArea;
-    
+
     // Squares for the ocean area
     private Rectangle[][] squaresOceanArea;
-    
+    private Square[][] playerMap;
+    private Square[][] opponentMap;
+
     // Sea battle game
     private ISeaBattleGame game;
-    
+
     // Flag to indicate whether game is in single-player or multiplayer mode
     private boolean singlePlayerMode = true;
-    
+
     // Radio buttons to indicate whether game is in single-player or multiplayer mode
     private RadioButton radioSinglePlayer;
     private RadioButton radioMultiPlayer;
-    
+
     // Flag to indicate whether the game is in playing mode
     private boolean playingMode = false;
-    
+
     // Flag to indicate that the game is endend
     private boolean gameEnded = false;
-    
+
     // Flag to indicate whether next ship should be placed horizontally or vertically
     private boolean horizontal = true;
-    
+
     // Radio buttons to indicate whether next ship should be placed horizontally or vertically
     private Label labelHorizontalVertical;
     private RadioButton radioHorizontal;
     private RadioButton radioVertical;
-    
+
     // Buttons to register player, start the game, and place or remove ships
     private Button buttonRegisterPlayer;
     Button buttonPlaceAllShips;
@@ -123,10 +126,10 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
     Button buttonPlaceSubmarine;
     Button buttonPlaceMineSweeper;
     Button buttonRemoveShip;
-    
+
     // Flag to indicate whether square is selected in ocean area
     private boolean squareSelectedInOceanArea = false;
-    
+
     // X and y-position of selected square in ocean region
     private int selectedSquareX;
     private int selectedSquareY;
@@ -136,34 +139,34 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
     public void start(Stage primaryStage) {
 
         log.info("Seabattle started");
-        
+
         // Define grid pane
         GridPane grid;
         grid = new GridPane();
         grid.setHgap(BORDERSIZE);
         grid.setVgap(BORDERSIZE);
         grid.setPadding(new Insets(BORDERSIZE,BORDERSIZE,BORDERSIZE,BORDERSIZE));
-        
+
         // For debug purposes
         // Make de grid lines visible
         // grid.setGridLinesVisible(true);
-        
+
         // Create the scene and add the grid pane
         Group root = new Group();
         Scene scene = new Scene(root, AREAWIDTH+BUTTONWIDTH+3*BORDERSIZE, 2*AREAHEIGHT+2*BORDERSIZE+65);
         root.getChildren().add(grid);
-        
+
         // Label for opponent's name
         opponentName = "Opponent";
         labelOpponentName = new Label(opponentName + "\'s grid");
         labelOpponentName.setMinWidth(AREAWIDTH);
         grid.add(labelOpponentName,0,0,1,2);
-        
+
         // Target area, a 10 x 10 grid where the opponent's ships are placed
         targetArea = new Rectangle(BORDERSIZE,3*BORDERSIZE,AREAWIDTH,AREAHEIGHT);
         targetArea.setFill(Color.WHITE);
         root.getChildren().add(targetArea);
-        
+
         // Create 10 x 10 squares for the target area
         squaresTargetArea = new Rectangle[NRSQUARESHORIZONTAL][NRSQUARESVERTICAL];
         for (int i = 0; i < NRSQUARESHORIZONTAL; i++) {
@@ -189,19 +192,21 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
                 root.getChildren().add(rectangle);
             }
         }
-        
+
         // Label for player's name
         playerName = "";
         labelPlayerName = new Label("Your grid");
         labelPlayerName.setMinWidth(AREAWIDTH);
         grid.add(labelPlayerName,0,33,1,2);
-        
+
         // Ocean area, a 10 x 10 grid where the player's ships are placed
         oceanArea = new Rectangle(BORDERSIZE,46*BORDERSIZE,AREAWIDTH,AREAHEIGHT);
         oceanArea.setFill(Color.WHITE);
         root.getChildren().add(oceanArea);
-        
+
+
         // Create 10 x 10 squares for the ocean area
+        playerMap = new Square[NRSQUARESHORIZONTAL][NRSQUARESVERTICAL];
         squaresOceanArea = new Rectangle[NRSQUARESHORIZONTAL][NRSQUARESVERTICAL];
         for (int i = 0; i < NRSQUARESHORIZONTAL; i++) {
             for (int j = 0; j < NRSQUARESVERTICAL; j++) {
@@ -215,6 +220,7 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
                 rectangle.setVisible(true);
                 final int xpos = i;
                 final int ypos = j;
+                playerMap[i][j] = new Square();
                 rectangle.addEventHandler(MouseEvent.MOUSE_PRESSED,
                     new EventHandler<MouseEvent>() {
                         @Override
@@ -226,7 +232,7 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
                 root.getChildren().add(rectangle);
             }
         }
-        
+
         // Text field to set the player's name
         labelYourName = new Label("Your name:");
         grid.add(labelYourName,1,2,1,2);
@@ -240,14 +246,14 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
             }
         });
         grid.add(textFieldPlayerName,1,4,1,2);
-        
+
         // Text field to set the player's password
         labelYourPassword = new Label("Your password:");
         grid.add(labelYourPassword,1,6,1,2);
         passwordFieldPlayerPassword = new PasswordField ();
         passwordFieldPlayerPassword.setMinWidth(BUTTONWIDTH);
         grid.add(passwordFieldPlayerPassword,1,8,1,2);
-        
+
         // Radio buttons to choose between single-player and multi-player mode
         radioSinglePlayer = new RadioButton("single-player mode");
         Tooltip tooltipSinglePlayer = new Tooltip("Play game in single-player mode");
@@ -273,11 +279,11 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
         radioSinglePlayer.setSelected(true);
         grid.add(radioSinglePlayer,1,10,1,2);
         grid.add(radioMultiPlayer,1,12,1,2);
-        
+
         // Button to register the player
         buttonRegisterPlayer = new Button("Register");
         buttonRegisterPlayer.setMinWidth(BUTTONWIDTH);
-        Tooltip tooltipRegisterParticipant = 
+        Tooltip tooltipRegisterParticipant =
                 new Tooltip("Press this button to register as player");
         buttonRegisterPlayer.setTooltip(tooltipRegisterParticipant);
     buttonRegisterPlayer.setOnAction(
@@ -289,11 +295,11 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
             }
         });
         grid.add(buttonRegisterPlayer,1,14,1,3);
-        
+
         // Button to place the player's ships automatically
         buttonPlaceAllShips = new Button("Place ships for me");
         buttonPlaceAllShips.setMinWidth(BUTTONWIDTH);
-        Tooltip tooltipPlaceShips = 
+        Tooltip tooltipPlaceShips =
                 new Tooltip("Press this button to let the computer place your ships");
         buttonPlaceAllShips.setTooltip(tooltipPlaceShips);
         buttonPlaceAllShips.setOnAction(new EventHandler() {
@@ -304,11 +310,11 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
         });
         buttonPlaceAllShips.setDisable(true);
         grid.add(buttonPlaceAllShips,1,18,1,3);
-        
+
         // Button to remove the player's ships that are already placed
         buttonRemoveAllShips = new Button("Remove all my ships");
         buttonRemoveAllShips.setMinWidth(BUTTONWIDTH);
-        Tooltip tooltipRemoveAllShips = 
+        Tooltip tooltipRemoveAllShips =
                 new Tooltip("Press this button to remove all your ships");
         buttonRemoveAllShips.setTooltip(tooltipRemoveAllShips);
         buttonRemoveAllShips.setOnAction(new EventHandler() {
@@ -319,11 +325,11 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
         });
         buttonRemoveAllShips.setDisable(true);
         grid.add(buttonRemoveAllShips,1,22,1,3);
-        
+
         // Button to notify that the player is ready to start playing
         buttonReadyToPlay = new Button("Ready to play");
         buttonReadyToPlay.setMinWidth(BUTTONWIDTH);
-        Tooltip tooltipReadyToPlay = 
+        Tooltip tooltipReadyToPlay =
                 new Tooltip("Press this button when you are ready to play");
         buttonReadyToPlay.setTooltip(tooltipReadyToPlay);
         buttonReadyToPlay.setOnAction(new EventHandler() {
@@ -334,11 +340,11 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
         });
         buttonReadyToPlay.setDisable(true);
         grid.add(buttonReadyToPlay,1,26,1,3);
-        
+
         // Button to start a new game
         buttonStartNewGame = new Button("Start new game");
         buttonStartNewGame.setMinWidth(BUTTONWIDTH);
-        Tooltip tooltipStartNewGame = 
+        Tooltip tooltipStartNewGame =
                 new Tooltip("Press this button to start a new game");
         buttonStartNewGame.setTooltip(tooltipStartNewGame);
         buttonStartNewGame.setOnAction(new EventHandler() {
@@ -349,7 +355,7 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
         });
         buttonStartNewGame.setDisable(true);
         grid.add(buttonStartNewGame,1,30,1,3);
-        
+
         // Radio buttons to place ships horizontally or vertically
         labelHorizontalVertical = new Label("Place next ship: ");
         radioHorizontal = new RadioButton("horizontally");
@@ -380,11 +386,11 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
         grid.add(labelHorizontalVertical,1,36,1,2);
         grid.add(radioHorizontal,1,38,1,2);
         grid.add(radioVertical,1,40,1,2);
-        
+
         // Button to place aircraft carrier on selected square
         buttonPlaceAircraftCarrier = new Button("Place aircraft carrier (5)");
         buttonPlaceAircraftCarrier.setMinWidth(BUTTONWIDTH);
-        Tooltip tooltipPlaceAircraftCarrier = 
+        Tooltip tooltipPlaceAircraftCarrier =
                 new Tooltip("Press this button to place the aircraft carrier on the selected square");
         buttonPlaceAircraftCarrier.setTooltip(tooltipPlaceAircraftCarrier);
         buttonPlaceAircraftCarrier.setOnAction(new EventHandler() {
@@ -395,11 +401,11 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
         });
         buttonPlaceAircraftCarrier.setDisable(true);
         grid.add(buttonPlaceAircraftCarrier,1,42,1,3);
-        
+
         // Button to place battle ship on selected square
         buttonPlaceBattleShip = new Button("Place battle ship (4)");
         buttonPlaceBattleShip.setMinWidth(BUTTONWIDTH);
-        Tooltip tooltipPlaceBattleShip = 
+        Tooltip tooltipPlaceBattleShip =
                 new Tooltip("Press this button to place the battle ship on the selected square");
         buttonPlaceBattleShip.setTooltip(tooltipPlaceBattleShip);
         buttonPlaceBattleShip.setOnAction(new EventHandler() {
@@ -410,11 +416,11 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
         });
         buttonPlaceBattleShip.setDisable(true);
         grid.add(buttonPlaceBattleShip,1,46,1,3);
-        
+
         // Button to place battle ship on selected square
         buttonPlaceCruiser = new Button("Place cruiser (3)");
         buttonPlaceCruiser.setMinWidth(BUTTONWIDTH);
-        Tooltip tooltipPlaceCruiser = 
+        Tooltip tooltipPlaceCruiser =
                 new Tooltip("Press this button to place the cruiser on the selected square");
         buttonPlaceCruiser.setTooltip(tooltipPlaceCruiser);
         buttonPlaceCruiser.setOnAction(new EventHandler() {
@@ -425,11 +431,11 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
         });
         buttonPlaceCruiser.setDisable(true);
         grid.add(buttonPlaceCruiser,1,50,1,3);
-        
+
         // Button to place mine sweeper on selected square
         buttonPlaceSubmarine = new Button("Place submarine (3)");
         buttonPlaceSubmarine.setMinWidth(BUTTONWIDTH);
-        Tooltip tooltipPlaceSubmarine = 
+        Tooltip tooltipPlaceSubmarine =
                 new Tooltip("Press this button to place the submarine on the selected square");
         buttonPlaceSubmarine.setTooltip(tooltipPlaceSubmarine);
         buttonPlaceSubmarine.setOnAction(new EventHandler() {
@@ -440,11 +446,11 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
         });
         buttonPlaceSubmarine.setDisable(true);
         grid.add(buttonPlaceSubmarine,1,54,1,3);
-        
+
         // Button to place mine sweeper on selected square
         buttonPlaceMineSweeper = new Button("Place mine sweeper (2)");
         buttonPlaceMineSweeper.setMinWidth(BUTTONWIDTH);
-        Tooltip tooltipPlaceMineSweeper = 
+        Tooltip tooltipPlaceMineSweeper =
                 new Tooltip("Press this button to place the mine sweeper on the selected square");
         buttonPlaceMineSweeper.setTooltip(tooltipPlaceMineSweeper);
         buttonPlaceMineSweeper.setOnAction(new EventHandler() {
@@ -455,11 +461,11 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
         });
         buttonPlaceMineSweeper.setDisable(true);
         grid.add(buttonPlaceMineSweeper,1,58,1,3);
-        
+
         // Button to remove ship that is positioned at selected square
         buttonRemoveShip = new Button("Remove ship");
         buttonRemoveShip.setMinWidth(BUTTONWIDTH);
-        Tooltip tooltipRemoveShip = 
+        Tooltip tooltipRemoveShip =
                 new Tooltip("Press this button to remove ship that is "
                         + "positioned on the selected square");
         buttonRemoveShip.setTooltip(tooltipRemoveShip);
@@ -471,20 +477,20 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
         });
         buttonRemoveShip.setDisable(true);
         grid.add(buttonRemoveShip,1,62,1,3);
-        
+
         // Set font for all labeled objects
         for (Node n : grid.getChildren()) {
             if (n instanceof Labeled) {
                 ((Labeled) n).setFont(new Font("Arial",13));
             }
         }
-        
+
         // Define title and assign the scene for main window
         primaryStage.setTitle("Sea battle: the game");
         primaryStage.setScene(scene);
         primaryStage.show();
-        
-        
+
+
         // Create instance of class that implements java interface ISeaBattleGame.
         // The class SeaBattleGame is not implemented yet.
         // When invoking methods of class SeaBattleGame an
@@ -492,7 +498,7 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
         // TODO: IMPLEMENT CLASS SeaBattleGame.
         game = new SeaBattleGame();
     }
-    
+
     /**
      * Set player number.
      * @param playerNr identification of player
@@ -533,7 +539,7 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
         });
         showMessage("Player " + name + " registered");
     }
-    
+
     /**
      * Set the name of the opponent.
      * The opponent's name will be shown above the target area.
@@ -556,7 +562,7 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
             }
         });
     }
-    
+
     /**
      * Notification that the game has started.
      * @param playerNr identification of player
@@ -568,7 +574,7 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
             showMessage("ERROR: Wrong player number method notifyStartGame()");
             return;
         }
-        
+
         // Set playing mode and disable placing/removing of ships
         playingMode = true;
         labelHorizontalVertical.setDisable(true);
@@ -586,7 +592,7 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
         buttonRemoveShip.setDisable(true);
         showMessage("Start playing by selecting a square in " + opponentName + "\'s grid");
     }
-    
+
     /**
      * Communicate the result of a shot fired by the player.
      * The result of the shot will be one of the following:
@@ -613,7 +619,7 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
             gameEnded = true;
         }
     }
-    
+
     /**
      * Communicate the result of a shot fired by the opponent.
      * The result of the shot will be one of the following:
@@ -642,7 +648,7 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
         // Player's turn
         switchTurn();
     }
-    
+
     /**
      * Show state of a square in the ocean area.
      * The color of the square depends on the state of the square.
@@ -662,11 +668,12 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
             @Override
             public void run() {
                 Rectangle square = squaresOceanArea[posX][posY];
+                playerMap[posX][posY].setState(squareState);
                 setSquareColor(square,squareState);
             }
         });
     }
-    
+
     /**
      * Show state of a square in the target area.
      * The color of the square depends on the state of the square.
@@ -687,10 +694,10 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
             public void run() {
                 Rectangle square = squaresTargetArea[posX][posY];
                 setSquareColor(square,squareState);
-            } 
+            }
         });
     }
-    
+
     /**
      * Show error message.
      * @param playerNr identification of player
@@ -701,7 +708,7 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
         // Show the error message as an alert message
         showMessage(errorMessage);
     }
-    
+
     /**
      * Set the color of the square according to position type.
      * Setting the color will be performed by the JavaFX Application Thread.
@@ -737,7 +744,7 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
             }
         });
     }
-    
+
     /**
      * Register the player at the game server.
      */
@@ -757,7 +764,7 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
         setPlayerNumber(user.id, user.username);
         setOpponentName(user.id, opponent.username);
     }
-    
+
     /**
      * Place the player's ships automatically.
      */
@@ -765,7 +772,7 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
         // Place the player's ships automatically.
         game.placeShipsAutomatically(playerNr);
     }
-    
+
     /**
      * Remove the player's ships.
      */
@@ -773,7 +780,7 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
         // Remove the player's ships
         game.removeAllShips(playerNr);
     }
-    
+
     /**
      * Notify that the player is ready to start the game.
      */
@@ -781,7 +788,7 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
         // Notify that the player is ready is start the game.
         game.notifyWhenReady(playerNr);
     }
-    
+
     /**
      * Start a new game.
      */
@@ -798,13 +805,13 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
         radioMultiPlayer.setDisable(false);
         buttonRegisterPlayer.setDisable(false);
     }
-    
+
     /**
      * Place a ship of a certain ship type. The bow of the ship will
-     * be placed at the selected square in the ocean area. The stern is 
+     * be placed at the selected square in the ocean area. The stern is
      * placed to the right of the bow when the ship should be placed
      * horizontally and below of the bow when the ship should be placed
-     * vertically. The exact position of the stern depends on the size 
+     * vertically. The exact position of the stern depends on the size
      * of the ship.
      * @param shipType    type of the ship to be placed
      * @param horizontal  indicates whether ship should be placed horizontally or
@@ -819,30 +826,35 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
         shipLenghts.put(ShipType.AIRCRAFTCARRIER, 5);
 
         if (squareSelectedInOceanArea) {
-            int bowX = selectedSquareX;
-            int bowY = selectedSquareY;
-            if( checkIfPlaceable(selectedSquareX, selectedSquareY,shipLenghts.get(shipType), horizontal)){
-                Ship ship = game.placeShip(playerNr, shipType, bowX, bowY, horizontal);
-
-                if (horizontal){
-                    //horizontal
-                    for (int i = 0; i<ship.length; i++){
-                        showSquarePlayer(playerNr, selectedSquareX + i, selectedSquareY, SquareState.SHIP);
+            if (playerMap[selectedSquareX][selectedSquareY].getState() == SquareState.WATER){
+                int bowX = selectedSquareX;
+                int bowY = selectedSquareY;
+                if(checkBoundries(selectedSquareX, selectedSquareY,shipLenghts.get(shipType), horizontal)){
+                    if(!checkCollision(bowX, bowY, shipLenghts.get(shipType), horizontal)) {
+                        Ship ship = game.placeShip(playerNr, shipType, bowX, bowY, horizontal);
+                        if (horizontal) {
+                            //horizontal
+                            for (int i = 0; i < ship.length; i++) {
+                                playerMap[selectedSquareX + i][selectedSquareY].setState(SquareState.SHIP);
+                                showSquarePlayer(playerNr, selectedSquareX + i, selectedSquareY, SquareState.SHIP);
+                            }
+                        } else {
+                            //vertical
+                            for (int i = 0; i < ship.length; i++) {
+                                playerMap[selectedSquareX][selectedSquareY + i].setState(SquareState.SHIP);
+                                showSquarePlayer(playerNr, selectedSquareX, selectedSquareY + i, SquareState.SHIP);
+                            }
+                        }
                     }
                 }else{
-                    //vertical
-                    for (int i = 0; i<ship.length; i++){
-                        showSquarePlayer(playerNr, selectedSquareX, selectedSquareY + i, SquareState.SHIP);
-                    }
+                    showMessage("ERROR: Ship cant be placed outside of the field, OR COLLIDES WITH OTHER SHIPS");
                 }
-            }else{
-                showMessage("ERROR: Ship cant be placed outside of the field, OR COLLIDES WITH OTHER SHIPS");
-            }
             }else {
-            showMessage("Select square in " + playerName + "\'s grid to place ship");
+                showMessage("Select square in " + playerName + "\'s grid to place ship");
+            }
         }
     }
-    
+
     /**
      * Remove ship that is positioned at selected square in ocean area.
      */
@@ -856,13 +868,13 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
             showMessage("Select square in " + playerName + "\'s grid to remove ship");
         }
     }
-    
+
     /**
-     * Show an alert message. 
+     * Show an alert message.
      * The message will disappear when the user presses ok.
      */
     private void showMessage(final String message) {
-        // Use Platform.runLater() to ensure that code concerning 
+        // Use Platform.runLater() to ensure that code concerning
         // the Alert message is executed by the JavaFX Application Thread
         log.debug("Show Message for {} - {}", playerName, message);
 
@@ -875,9 +887,9 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
                 alert.setContentText(message);
                 alert.showAndWait();
             }
-        });  
+        });
     }
-    
+
     /**
      * Event handler when mouse button is pressed in rectangle in target area.
      * A shot will be fired at the selected square when in playing mode.
@@ -894,7 +906,7 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
                 // It is this player's turn
                 // Player fires a shot at the selected target area
                 game.fireShot(playerNr,x,y);
-                
+
                 // Opponent's turn
                 switchTurn();
             }
@@ -912,10 +924,10 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
             }
         }
     }
-    
+
     /**
      * Event handler when mouse button is pressed in rectangle in ocean area.
-     * When not in playing mode: the square that was selected before will 
+     * When not in playing mode: the square that was selected before will
      * become light blue and the the selected square will become yellow.
      * A message will be shown when in playing mode.
      * @param event mouse event
@@ -940,76 +952,74 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
             showMessage("Select square in " + opponentName + "\'s grid to fire");
         }
     }
-    
+
     /**
      * Method to switch player's turn.
      * This method is synchronized because switchTurn() may be
-     * called by the Java FX Application thread or by another thread 
+     * called by the Java FX Application thread or by another thread
      * handling communication with the game server.
      */
     private synchronized void switchTurn() {
         playerTurn = 1 - playerTurn;
     }
-    
+
     /**
      * Method to check whether it is this player's turn.
      * This method is synchronized because switchTurn() may be
-     * called by the Java FX Application thread or another thread 
+     * called by the Java FX Application thread or another thread
      * handling communication with the game server.
      */
     private synchronized boolean playersTurn() {
         return playerNr == playerTurn;
     }
-    
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         launch(args);
     }
-    public boolean checkIfPlaceable(int posX, int posY, int length, boolean horizontal){
-        ArrayList<Ship> ships = game.getShips(playerNr);
-        boolean placeable = false;
-        boolean xContains = false;
-        boolean yContains = false;
-        for (Ship ship: ships) {
-
-            //checks if length of new ship will collide with a ship
-            for (int i = 0; i < ship.bowX; i++) {
-                if (posX == i) {
-                    xContains = true;
-                }
-            }
-            //checks if length of new ship will collide with a ship
-
-            for (int i = 0; i < ship.bowY; i++) {
-                if (posY == i) {
-                    yContains = true;
-                }
-            }
-        }
-            if(ships.isEmpty() || !(xContains || yContains)){
+    public boolean checkBoundries(int posX, int posY, int length, boolean horizontal){
                 if (horizontal){
                     //horizontal
                     if (posX + length > 10){
-                        //not placeable
-                        placeable = false;
+                        return false;
                     }
                     else{
-                        //placeable
-                        placeable = true;
+                        return true;
                     }
                 }else {
                     //vertical
                     if (posY + length > 10){
-                        //not placeable
-                        placeable = false;
+                        return false;
                     } else {
-                        //placeable
-                        placeable = true;
+                        return true;
                     }
+            }
+    }
+    public boolean checkCollision(int posX, int posY, int length, boolean horizontal){
+        boolean result = false;
+        if(horizontal){
+            for (int i = 0; i < length; i++ ) {
+                if (playerMap[posX + i][posY].getState() == SquareState.SHIP){
+                    result = true;
+                    break;
+                }
+                else {
+                    result = false;
                 }
             }
-     return placeable;
+        } else{
+            for (int i = 0; i < length; i++ ) {
+                if (playerMap[posX][posY + i].getState() == SquareState.SHIP){
+                    result = true;
+                    break;
+                }
+                else {
+                    result = false;
+                }
+            }
+        }
+        return result;
     }
 }
