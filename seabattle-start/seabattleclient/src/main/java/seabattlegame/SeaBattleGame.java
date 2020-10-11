@@ -19,8 +19,9 @@ import java.util.ArrayList;
  * @author Nico Kuijpers
  */
 public class SeaBattleGame implements ISeaBattleGame {
-  GameData gameData;
+  Gamedata gameData;
   public SeaBattleGame(){
+
     gameData = new GameData();
   }
 
@@ -44,7 +45,7 @@ public class SeaBattleGame implements ISeaBattleGame {
     //throw new UnsupportedOperationException("Method placeShip() VISUAL not implemented.");
   }
 
-  @Override
+
   public void removeShip(int playerNr, int posX, int posY) {
     gameData.removeShip(playerNr, posX, posY);
     throw new UnsupportedOperationException("Method removeShip()VISUAL not implemented.");

@@ -846,6 +846,9 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
                             }
                         }
                     }
+                    else{
+                        showMessage("ERROR: Ship cant be placed outside of the field, OR COLLIDES WITH OTHER SHIPS");
+                    }
                 }else{
                     showMessage("ERROR: Ship cant be placed outside of the field, OR COLLIDES WITH OTHER SHIPS");
                 }
@@ -862,7 +865,18 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
         if (squareSelectedInOceanArea) {
             int posX = selectedSquareX;
             int posY = selectedSquareY;
-            game.removeShip(playerNr, posX, posY);
+            Ship ship = game.removeShip(playerNr, posX, posY);
+            if (ship.horizontal){
+                //horizontal
+                for (int i = 0; i < ship.length; i++){
+                    playerMap[ship.bowX + i][ship.bowY].setState(SquareState.WATER);
+                }
+            }else{
+                //vertical
+                for (int i = 0; i < ship.length; i++){
+                    playerMap[ship.bowX][ship.bowY + i].setState(SquareState.WATER);
+                }
+            }
         }
         else {
             showMessage("Select square in " + playerName + "\'s grid to remove ship");

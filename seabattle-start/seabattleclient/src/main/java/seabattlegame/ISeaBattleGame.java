@@ -70,8 +70,8 @@ public interface ISeaBattleGame {
      * @param posX     x-coordinate of square where ship was placed
      * @param posY     y-coordinate of square where ship was placed
      */
-    public void removeShip(int playerNr, int posX, int posY);
-    
+    public Ship removeShip(int playerNr, int posX, int posY);
+
     /**
      * Remove all ships that are placed. The state of the ocean area in the 
      * player's application will be kept up-to-date by method calls of 

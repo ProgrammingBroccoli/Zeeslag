@@ -1,6 +1,7 @@
 package seabattlegui;
 
 import models.Ship;
+import models.Square;
 import models.User;
 
 import java.util.ArrayList;
@@ -44,14 +45,27 @@ public class GameData {
             }
         }
     }
-    public void removeShip(int playerNr, int posX, int posY){
+    public Ship removeShip(int playerNr, int posX, int posY){
         Ship deletingShip = null;
         for (Ship ship : ships){
-            if (ship.playerNr == playerNr && ship.bowX == posX && ship.bowY == posY){
-                deletingShip = ship;
+            if (ship.horizontal){
+                //horizontal
+                for (int i = 0; i < ship.length; i++){
+                    if(posX == ship.bowX + i && posY == ship.bowY && ship.playerNr == playerNr){
+                        deletingShip = ship;
+                    }
+                }
+            }else{
+                for (int i = 0; i< ship.length; i++){
+                    if (posX == ship.bowX && posY == ship.bowY + i && ship.playerNr == playerNr){
+                        deletingShip = ship;
+                    }
+                }
             }
+
         }
         ships.remove(deletingShip);
+       return deletingShip;
     }
 
     public void removeAllShips(int playerNr) {
