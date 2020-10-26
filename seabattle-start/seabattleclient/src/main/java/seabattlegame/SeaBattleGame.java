@@ -4,6 +4,7 @@
 package seabattlegame;
 
 import models.Ship;
+import models.Shot;
 import models.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -47,13 +48,13 @@ public class SeaBattleGame implements ISeaBattleGame {
   @Override
   public void removeShip(int playerNr, int posX, int posY) {
     gameData.removeShip(playerNr, posX, posY);
-    throw new UnsupportedOperationException("Method removeShip()VISUAL not implemented.");
+    //throw new UnsupportedOperationException("Method removeShip()VISUAL not implemented.");
   }
 
   @Override
   public void removeAllShips(int playerNr) {
     gameData.removeAllShips(playerNr);
-    throw new UnsupportedOperationException("Method removeAllShips()VISUAL not implemented.");
+    //throw new UnsupportedOperationException("Method removeAllShips()VISUAL not implemented.");
   }
 
   @Override
@@ -62,8 +63,8 @@ public class SeaBattleGame implements ISeaBattleGame {
   }
 
   @Override
-  public void fireShot(int playerNr, int posX, int posY) {
-    throw new UnsupportedOperationException("Method fireShot() not implemented.");
+  public Shot fireShot(int playerNr, int posX, int posY) {
+    return gameData.fireShot(playerNr,posX,posY);
   }
 
   @Override

@@ -709,12 +709,6 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
         showMessage(errorMessage);
     }
 
-    /**
-     * Set the color of the square according to position type.
-     * Setting the color will be performed by the JavaFX Application Thread.
-     * @param square the square of which the color should be changed.
-     * @param type position type to determine the color.
-     */
     private void setSquareColor(final Rectangle square, final SquareState squareState) {
         // Ensure that changing the color of the square is performed by
         // the JavaFX Application Thread.

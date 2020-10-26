@@ -1,6 +1,7 @@
 package seabattlegui;
 
 import models.Ship;
+import models.Shot;
 import models.User;
 
 import java.util.ArrayList;
@@ -9,6 +10,7 @@ public class GameData {
 
     private ArrayList<User> users;
     private ArrayList<Ship> ships;
+    private ArrayList<Shot> shots;
 
     public GameData(){
         users = new ArrayList<User>();
@@ -60,5 +62,10 @@ public class GameData {
 
     public ArrayList<Ship> getShips(int playerNr) {
         return ships;
+    }
+
+    public Shot fireShot(int opponent, int posX, int posY) {
+        Shot shot = new Shot(opponent, posX, posY, ShotType.HIT);
+        return  shot;
     }
 }

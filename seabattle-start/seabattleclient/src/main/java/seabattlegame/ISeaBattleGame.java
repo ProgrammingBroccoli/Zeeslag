@@ -4,6 +4,7 @@
 package seabattlegame;
 
 import models.Ship;
+import models.Shot;
 import models.User;
 import seabattlegui.ISeaBattleGUI;
 import seabattlegui.ShipType;
@@ -108,8 +109,9 @@ public interface ISeaBattleGame {
      * @param playerNr identification of player who fires.
      * @param posX     x-coordinate of square
      * @param posY     y-coordinate of square
+     * @return
      */
-    public void fireShot(int playerNr, int posX, int posY);
+    public Shot fireShot(int playerNr, int posX, int posY);
     
     /**
      * Start a new game. Remove all ships and unregister the player.

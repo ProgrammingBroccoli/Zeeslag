@@ -5,3 +5,10 @@
 2020-10-05 09:55:01,260 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for sss - Player sss registered
 2020-10-05 09:55:01,267 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for sss - Your opponent is Yoshii
 2020-10-05 09:56:00,451 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for sss - Select square in sss's grid to place ship
+2020-10-05 10:10:07,112 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-10-05 10:17:14,609 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-10-26 10:41:05,384 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-10-26 10:41:21,384 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Jhonny test
+2020-10-26 10:41:21,384 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 2 Username = Yoshii
+2020-10-26 10:41:21,416 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny test - Player Jhonny test registered
+2020-10-26 10:41:21,429 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny test - Your opponent is Yoshii
