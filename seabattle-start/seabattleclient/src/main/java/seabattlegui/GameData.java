@@ -73,6 +73,12 @@ public class GameData {
     }
 
     public ArrayList<Ship> getShips(int playerNr) {
-        return ships;
+        ArrayList<Ship> tempList = new ArrayList<Ship>();
+        for (Ship ship: ships) {
+            if (ship.playerNr == playerNr){
+                tempList.add(ship);
+            }
+        }
+        return tempList;
     }
 }

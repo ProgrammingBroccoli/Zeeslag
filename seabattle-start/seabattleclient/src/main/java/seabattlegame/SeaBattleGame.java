@@ -60,7 +60,7 @@ public class SeaBattleGame implements ISeaBattleGame {
 
   @Override
   public void notifyWhenReady(int playerNr) {
-    throw new UnsupportedOperationException("Method notifyWhenReady() not implemented.");
+    System.out.println("Player and opponent ready to play");
   }
 
   @Override
