@@ -19,6 +19,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import models.Coord;
 import models.Ship;
 import models.Square;
 import models.User;
@@ -690,17 +691,19 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
     @Override
     public void showSquareOpponent(int playerNr, final int posX, final int posY, final SquareState squareState) {
         // Check identification of player
-        if (playerNr != this.playerNr) {
+        if (playerNr ==  this.playerNr) {
             showMessage("ERROR: Wrong player number method showSquareOpponent()");
             return;
+        }else{
+            Platform.runLater(new Runnable() {
+                @Override
+                public void run() {
+                    Rectangle square = squaresTargetArea[posX][posY];
+                    setSquareColor(square,squareState);
+                }
+            });
         }
-        Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
-                Rectangle square = squaresTargetArea[posX][posY];
-                setSquareColor(square,squareState);
-            }
-        });
+
     }
 
     /**
@@ -808,7 +811,18 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
      */
     private void notifyWhenReady() {
         // Notify that the player is ready is start the game.
+        buttonRemoveShip.setDisable(true);
+        buttonPlaceBattleShip.setDisable(true);
+        buttonPlaceSubmarine.setDisable(true);
+        buttonPlaceAircraftCarrier.setDisable(true);
+        buttonPlaceCruiser.setDisable(true);
+        buttonPlaceAllShips.setDisable(true);
+        buttonRemoveAllShips.setDisable(true);
+        buttonPlaceMineSweeper.setDisable(true);
         game.notifyWhenReady(playerNr);
+        playingMode = true;
+        gameEnded = false;
+        playerTurn = 1;
     }
 
     /**
@@ -872,13 +886,13 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
                         }
                     }
                     else{
-                        showMessage("ERROR: Ship cant be placed outside of the field, OR COLLIDES WITH OTHER SHIPS");
+                        //showMessage("ERROR: Ship cant be placed outside of the field, OR COLLIDES WITH OTHER SHIPS");
                     }
                 }else{
-                    showMessage("ERROR: Ship cant be placed outside of the field, OR COLLIDES WITH OTHER SHIPS");
+                    //showMessage("ERROR: Ship cant be placed outside of the field, OR COLLIDES WITH OTHER SHIPS");
                 }
             }else {
-                showMessage("Select square in " + playerName + "\'s grid to place ship");
+                //showMessage("Select square in " + playerName + "\'s grid to place ship");
             }
         }
         return null;
@@ -940,17 +954,57 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
      * @param x     x-coordinate of selected square
      * @param y     y-coordinate of selected square
      */
+    //OPPONENT MAP
     private void rectangleTargetAreaMousePressed(MouseEvent event, int x, int y) {
         if (playingMode && !gameEnded) {
             // Game is in playing mode
-            squaresTargetArea[x][y].setFill(Color.YELLOW);
+            //squaresTargetArea[x][y].setFill(Color.YELLOW);
             if (playersTurn()) {
+                if (opponentMap[x][y].getState() != SquareState.SHOTMISSED && opponentMap[x][y].getState() != SquareState.SHOTHIT && opponentMap[x][y].getState() != SquareState.SHIPSUNK) {
+                    SquareState state = validateState(game.fireShot(2, x, y, opponentMap));
+                    if (state == SquareState.SHIPSUNK) {
+                        sinkShip(2, x, y);
+//                        if(sinkShip(playerNr, x, y)){
+//                            //loss
+//                            showMessage("You Won!");
+//                            gameEnded = true;
+//                        }else{
+//                            //no loss yet
+//                        }
+                    } else {
+                        showSquareOpponent(opponentNr, x, y, state);
+                    }
+                }
+                if (game.getNrOfShips(2) == 0){
+                    //GAME ENDED
+                    showMessage("You Won!");
+                    gameEnded = true;
+                }
                 // It is this player's turn
                 // Player fires a shot at the selected target area
-                game.fireShot(playerNr,x,y);
+
 
                 // Opponent's turn
                 switchTurn();
+                Random random = new Random();
+                x = random.nextInt(10);
+                y = random.nextInt(10);
+                if(playerMap[x][y].getState() != SquareState.SHOTMISSED && playerMap[x][y].getState() != SquareState.SHOTHIT && playerMap[x][y].getState() != SquareState.SHIPSUNK){
+                    SquareState playerstate = validateState(game.fireShot(1, x, y, playerMap));
+                    if (playerstate == SquareState.SHIPSUNK){
+                        sinkShip(1, x, y);
+                    } else{
+                        showSquarePlayer(1, x, y, playerstate);
+                    }
+                }
+                if (game.getNrOfShips(1) == 0){
+                    //GAME ENDED
+                    showMessage(playerName + " Won!");
+                    gameEnded = true;
+                }
+                switchTurn();
+
+
             }
             else {
                 // It is not this player's turn yet
@@ -964,6 +1018,32 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
             else {
                 showMessage("Select square in " + playerName + "\'s grid to place ships");
             }
+        }
+    }
+
+    private void sinkShip(int playerNr, int x, int y) {
+        Ship ship = game.getShipByCords(playerNr, x, y);
+        for(Coord coord : ship.getCoords()){
+            if (playerNr == 2){
+                showSquareOpponent(2, coord.getX(), coord.getY(), SquareState.SHIPSUNK);
+            } else {
+                showSquarePlayer(1, coord.getX(), coord.getY(), SquareState.SHIPSUNK);
+            }
+        }
+        User player = game.getPlayer(playerNr);
+        player.sinkship();
+
+    }
+
+    private SquareState validateState(ShotType shotType) {
+        switch (shotType){
+            case HIT:
+                return SquareState.SHOTHIT;
+            case SUNK:
+                return SquareState.SHIPSUNK;
+            case MISSED:
+            default:
+                return SquareState.SHOTMISSED;
         }
     }
 
@@ -1002,8 +1082,11 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
      * handling communication with the game server.
      */
     private synchronized void switchTurn() {
-        playerTurn = 1 - playerTurn;
+        if (playerTurn == 1){
+            playerTurn = 999;
+        } else playerTurn = 1;
     }
+
 
     /**
      * Method to check whether it is this player's turn.

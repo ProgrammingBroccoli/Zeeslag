@@ -1,7 +1,6 @@
 package seabattlegui;
 
 import models.Ship;
-import models.Square;
 import models.User;
 
 import java.util.ArrayList;
@@ -80,5 +79,33 @@ public class GameData {
             }
         }
         return tempList;
+    }
+
+    public Ship getShipByCords(int playernr, int posX, int posY) {
+        Ship tempShip = null;
+        for (Ship ship : ships){
+            if (ship.playerNr == playernr){
+                if (ship.horizontal){
+                    //horizontal
+                    for (int i = 0; i < ship.length; i++){
+                        if(posX == ship.bowX + i && posY == ship.bowY){
+                            tempShip = ship;
+                        }
+                    }
+                }else{
+                    for (int i = 0; i< ship.length; i++){
+                        if (posX == ship.bowX && posY == ship.bowY + i){
+                            tempShip = ship;
+                        }
+                    }
+                }
+            }
+        }
+        return tempShip;
+    }
+
+    public int getNrOfShips(int playerNr) {
+        User user = getUser(playerNr);
+        return user.getNrOfShips();
     }
 }

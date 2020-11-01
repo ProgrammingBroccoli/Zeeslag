@@ -8,6 +8,8 @@ public class User {
     public String password;
     public ISeaBattleGUI application;
     public boolean singleplayer;
+    public boolean isReady = false;
+    public int nrOfShips = 5;
 
     public User(String username, String password, ISeaBattleGUI application, boolean singleplayer) {
         this.id = 1;
@@ -19,5 +21,17 @@ public class User {
     @Override
     public String toString(){
         return "ID = " +id+ " Username = " +username;
+    }
+
+    public void setIsReady(boolean state) {
+        this.isReady = state;
+    }
+
+    public void sinkship() {
+        this.nrOfShips--;
+    }
+
+    public int getNrOfShips() {
+        return nrOfShips;
     }
 }

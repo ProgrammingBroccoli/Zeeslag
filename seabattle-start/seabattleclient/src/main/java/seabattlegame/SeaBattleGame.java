@@ -4,12 +4,14 @@
 package seabattlegame;
 
 import models.Ship;
+import models.Square;
 import models.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import seabattlegui.GameData;
 import seabattlegui.ISeaBattleGUI;
 import seabattlegui.ShipType;
+import seabattlegui.ShotType;
 
 import java.util.ArrayList;
 
@@ -60,11 +62,23 @@ public class SeaBattleGame implements ISeaBattleGame {
 
   @Override
   public void notifyWhenReady(int playerNr) {
+    gameData.getUser(playerNr).setIsReady(true);
+
+
+
     System.out.println("Player and opponent ready to play");
   }
 
   @Override
-  public void fireShot(int playerNr, int posX, int posY) {
+  public ShotType fireShot(int playerNr, int posX, int posY, Square[][]map) {
+    switch (map[posX][posY].getState()){
+      case WATER:
+        return ShotType.MISSED;
+
+      case SHIP:
+        gameData.getShipByCords(playerNr == 1 ? 999 : 1, posX, posY).giveDammage();
+        return gameData.getShipByCords(playerNr == 1 ? 999 : 1, posX, posY).getHealth() == 0 ? ShotType.SUNK : ShotType.HIT;
+    }
     throw new UnsupportedOperationException("Method fireShot() not implemented.");
   }
 
@@ -83,5 +97,20 @@ public class SeaBattleGame implements ISeaBattleGame {
       if (ship.shipType == shipType) return true;
     }
     return false;
+  }
+
+  @Override
+  public Ship getShipByCords(int playerNr, int x, int y) {
+   return gameData.getShipByCords(playerNr, x, y);
+  }
+
+  @Override
+  public User getPlayer(int playerNr) {
+    return gameData.getUser(playerNr);
+  }
+
+  @Override
+  public int getNrOfShips(int playerNr) {
+    return gameData.getNrOfShips(playerNr);
   }
 }
