@@ -956,14 +956,15 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
      */
     //OPPONENT MAP
     private void rectangleTargetAreaMousePressed(MouseEvent event, int x, int y) {
+        boolean opponentShotFired = false;
         if (playingMode && !gameEnded) {
             // Game is in playing mode
             //squaresTargetArea[x][y].setFill(Color.YELLOW);
-            if (playersTurn()) {
                 if (opponentMap[x][y].getState() != SquareState.SHOTMISSED && opponentMap[x][y].getState() != SquareState.SHOTHIT && opponentMap[x][y].getState() != SquareState.SHIPSUNK) {
-                    SquareState state = validateState(game.fireShot(2, x, y, opponentMap));
+                    SquareState state = validateState(game.fireShot(playerNr, x, y, opponentMap));
+                    opponentMap[x][y].setState(state);
                     if (state == SquareState.SHIPSUNK) {
-                        sinkShip(2, x, y);
+                        sinkShip(opponentNr, x, y);
 //                        if(sinkShip(playerNr, x, y)){
 //                            //loss
 //                            showMessage("You Won!");
@@ -974,42 +975,43 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
                     } else {
                         showSquareOpponent(opponentNr, x, y, state);
                     }
+                    while(!opponentShotFired){
+                        Random random = new Random();
+                        x = random.nextInt(10);
+                        y = random.nextInt(10);
+                        if (playerMap[x][y].getState() != SquareState.SHOTMISSED && playerMap[x][y].getState() != SquareState.SHOTHIT && playerMap[x][y].getState() != SquareState.SHIPSUNK) {
+                            SquareState playerstate = validateState(game.fireShot(opponentNr, x, y, playerMap));
+                            if (playerstate == SquareState.SHIPSUNK) {
+                                sinkShip(playerNr, x, y);
+                            } else {
+                                showSquarePlayer(1, x, y, playerstate);
+                            }
+                            opponentShotFired = true;
+                        }
+                    }
+
+                    if (game.getNrOfShips(1) == 0) {
+                        //GAME ENDED
+                        showMessage(opponentName + " Won!");
+                        gameEnded = true;
+                    }
                 }
-                if (game.getNrOfShips(2) == 0){
+                if (game.getNrOfShips(opponentNr) == 0) {
                     //GAME ENDED
                     showMessage("You Won!");
                     gameEnded = true;
+
+                    // It is this player's turn
+                    // Player fires a shot at the selected target area
+
+                    // Opponent's turn
+
+                    //switchTurn();
+//            else {
+//                // It is not this player's turn yet
+//                showMessage("Wait till " + opponentName + " has fired a shot");
+//            }
                 }
-                // It is this player's turn
-                // Player fires a shot at the selected target area
-
-
-                // Opponent's turn
-                switchTurn();
-                Random random = new Random();
-                x = random.nextInt(10);
-                y = random.nextInt(10);
-                if(playerMap[x][y].getState() != SquareState.SHOTMISSED && playerMap[x][y].getState() != SquareState.SHOTHIT && playerMap[x][y].getState() != SquareState.SHIPSUNK){
-                    SquareState playerstate = validateState(game.fireShot(1, x, y, playerMap));
-                    if (playerstate == SquareState.SHIPSUNK){
-                        sinkShip(1, x, y);
-                    } else{
-                        showSquarePlayer(1, x, y, playerstate);
-                    }
-                }
-                if (game.getNrOfShips(1) == 0){
-                    //GAME ENDED
-                    showMessage(playerName + " Won!");
-                    gameEnded = true;
-                }
-                switchTurn();
-
-
-            }
-            else {
-                // It is not this player's turn yet
-                showMessage("Wait till " + opponentName + " has fired a shot");
-            }
         }
         else {
             if (gameEnded) {
@@ -1024,8 +1026,8 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
     private void sinkShip(int playerNr, int x, int y) {
         Ship ship = game.getShipByCords(playerNr, x, y);
         for(Coord coord : ship.getCoords()){
-            if (playerNr == 2){
-                showSquareOpponent(2, coord.getX(), coord.getY(), SquareState.SHIPSUNK);
+            if (playerNr == 999){
+                showSquareOpponent(999, coord.getX(), coord.getY(), SquareState.SHIPSUNK);
             } else {
                 showSquarePlayer(1, coord.getX(), coord.getY(), SquareState.SHIPSUNK);
             }

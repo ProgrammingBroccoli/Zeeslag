@@ -17,7 +17,12 @@ public class GameData {
 
     public User addUser(String username, String password, ISeaBattleGUI application, boolean singleplayer){
         User user = new User(username, password, application, singleplayer);
-        user.id = users.size()+1;
+
+        if(users.size() == 1){
+            user.id = 999;
+        } else {
+            user.id = 1;
+        }
         users.add(user);
         return user;
     }
