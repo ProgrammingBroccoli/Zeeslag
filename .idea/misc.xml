@@ -4,6 +4,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/seabattle-start/pom.xml" />
+        <option value="$PROJECT_DIR$/SeabattleServer/pom.xml" />
       </list>
     </option>
   </component>

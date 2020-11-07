@@ -513,7 +513,7 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
     public void setPlayerNumber(int playerNr, String name) {
         // Check identification of player
         if (!this.playerName.equals(name)) {
-            showMessage("ERROR: Wrong player name method setPlayerNumber()");
+            //showMessage("ERROR: Wrong player name method setPlayerNumber()");
             return;
         }
         this.playerNr = playerNr;
@@ -556,7 +556,7 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
     public void setOpponentName(int playerNr, String name) {
         // Check identification of player
         if (playerNr != this.playerNr) {
-            showMessage("ERROR: Wrong player number method setOpponentName()");
+            //showMessage("ERROR: Wrong player number method setOpponentName()");
             return;
         }
         showMessage("Your opponent is " + name);
@@ -577,7 +577,7 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
     public void notifyStartGame(int playerNr) {
         // Check identification of player
         if (playerNr != this.playerNr) {
-            showMessage("ERROR: Wrong player number method notifyStartGame()");
+            //showMessage("ERROR: Wrong player number method notifyStartGame()");
             return;
         }
 
@@ -667,7 +667,7 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
     public void showSquarePlayer(int playerNr, final int posX,final int posY,final SquareState squareState) {
         // Check identification of player
         if (playerNr != this.playerNr) {
-            showMessage("ERROR: Wrong player number method showSquarePlayer()");
+            //showMessage("ERROR: Wrong player number method showSquarePlayer()");
             return;
         }
         Platform.runLater(new Runnable() {
@@ -921,7 +921,7 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
             }
         }
         else {
-            showMessage("Select square in " + playerName + "\'s grid to remove ship");
+           // showMessage("Select square in " + playerName + "\'s grid to remove ship");
         }
     }
 
