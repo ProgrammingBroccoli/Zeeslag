@@ -3,6 +3,7 @@ module seabattleclient {
   requires javafx.graphics;
   requires javafx.controls;
     requires javafx.base;
+  requires javax.websocket.client.api;
 
-    exports seabattlegui;
+  exports seabattlegui;
 }

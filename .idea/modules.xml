@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/seabattle-start/SeaBattleStart.iml" filepath="$PROJECT_DIR$/seabattle-start/SeaBattleStart.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SeabattleServer/SeabattleServer.iml" filepath="$PROJECT_DIR$/SeabattleServer/SeabattleServer.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Zeeslag.iml" filepath="$PROJECT_DIR$/.idea/Zeeslag.iml" />
+      <module fileurl="file://$PROJECT_DIR$/seabattle-start/communicatorshared/communicatorshared.iml" filepath="$PROJECT_DIR$/seabattle-start/communicatorshared/communicatorshared.iml" />
       <module fileurl="file://$PROJECT_DIR$/seabattle-start/seabattleclient/seabattleclient.iml" filepath="$PROJECT_DIR$/seabattle-start/seabattleclient/seabattleclient.iml" />
       <module fileurl="file://$PROJECT_DIR$/seabattle-start/seabattleserver/seabattleserver.iml" filepath="$PROJECT_DIR$/seabattle-start/seabattleserver/seabattleserver.iml" />
     </modules>
