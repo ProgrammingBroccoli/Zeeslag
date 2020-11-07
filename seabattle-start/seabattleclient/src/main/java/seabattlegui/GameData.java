@@ -1,7 +1,6 @@
 package seabattlegui;
 
 import models.Ship;
-import models.Square;
 import models.User;
 
 import java.util.ArrayList;
@@ -18,7 +17,12 @@ public class GameData {
 
     public User addUser(String username, String password, ISeaBattleGUI application, boolean singleplayer){
         User user = new User(username, password, application, singleplayer);
-        user.id = users.size()+1;
+
+        if(users.size() == 1){
+            user.id = 999;
+        } else {
+            user.id = 1;
+        }
         users.add(user);
         return user;
     }
@@ -73,6 +77,40 @@ public class GameData {
     }
 
     public ArrayList<Ship> getShips(int playerNr) {
-        return ships;
+        ArrayList<Ship> tempList = new ArrayList<Ship>();
+        for (Ship ship: ships) {
+            if (ship.playerNr == playerNr){
+                tempList.add(ship);
+            }
+        }
+        return tempList;
+    }
+
+    public Ship getShipByCords(int playernr, int posX, int posY) {
+        Ship tempShip = null;
+        for (Ship ship : ships){
+            if (ship.playerNr == playernr){
+                if (ship.horizontal){
+                    //horizontal
+                    for (int i = 0; i < ship.length; i++){
+                        if(posX == ship.bowX + i && posY == ship.bowY){
+                            tempShip = ship;
+                        }
+                    }
+                }else{
+                    for (int i = 0; i< ship.length; i++){
+                        if (posX == ship.bowX && posY == ship.bowY + i){
+                            tempShip = ship;
+                        }
+                    }
+                }
+            }
+        }
+        return tempShip;
+    }
+
+    public int getNrOfShips(int playerNr) {
+        User user = getUser(playerNr);
+        return user.getNrOfShips();
     }
 }

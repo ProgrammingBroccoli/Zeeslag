@@ -4,9 +4,11 @@
 package seabattlegame;
 
 import models.Ship;
+import models.Square;
 import models.User;
 import seabattlegui.ISeaBattleGUI;
 import seabattlegui.ShipType;
+import seabattlegui.ShotType;
 
 import java.util.ArrayList;
 
@@ -108,8 +110,9 @@ public interface ISeaBattleGame {
      * @param playerNr identification of player who fires.
      * @param posX     x-coordinate of square
      * @param posY     y-coordinate of square
+     * @return
      */
-    public void fireShot(int playerNr, int posX, int posY);
+    public ShotType fireShot(int playerNr, int posX, int posY, Square[][] map);
     
     /**
      * Start a new game. Remove all ships and unregister the player.
@@ -124,4 +127,11 @@ public interface ISeaBattleGame {
     public void startNewGame(int playerNr);
 
     ArrayList<Ship> getShips(int playerNr);
+    public boolean shipPlaced(int playerNr, ShipType shipType);
+
+    Ship getShipByCords(int playerNr, int x, int y);
+
+    User getPlayer(int playerNr);
+
+    int getNrOfShips(int opponentNr);
 }
