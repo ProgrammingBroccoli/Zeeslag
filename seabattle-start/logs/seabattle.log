@@ -275,3 +275,273 @@
 2020-10-05 09:51:15,717 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Rest - Your opponent is Yoshii
 2020-10-05 09:51:18,029 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Rest - Select square in Jhonny Rest's grid to place ship
 2020-10-05 10:09:48,140 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Rest - ERROR: Ship cant be placed outside of the field, OR COLLIDES WITH OTHER SHIPS
+2020-11-08 17:36:18,116 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 17:43:30,793 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 17:43:46,687 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Jhonny Test
+2020-11-08 17:43:46,687 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 999 Username = Yoshii
+2020-11-08 17:43:46,689 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Test - Player Jhonny Test registered
+2020-11-08 17:43:46,690 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Test - Your opponent is Yoshii
+2020-11-08 17:45:18,334 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 17:45:30,569 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = nog n test
+2020-11-08 17:45:30,569 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 999 Username = Yoshii
+2020-11-08 17:45:30,571 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for nog n test - Player nog n test registered
+2020-11-08 17:45:30,574 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for nog n test - Your opponent is Yoshii
+2020-11-08 18:00:28,138 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 18:00:42,681 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Jhonny
+2020-11-08 18:00:42,683 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny - Player Jhonny registered
+2020-11-08 18:01:21,600 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 18:01:28,782 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = YO mama
+2020-11-08 18:01:28,783 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for YO mama - Player YO mama registered
+2020-11-08 18:04:07,697 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 18:04:13,855 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Jhonny Test
+2020-11-08 18:04:13,856 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Test - Player Jhonny Test registered
+2020-11-08 18:04:14,346 [WebSocketClient@2147370958-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Test - Player Jhonny Test joined
+2020-11-08 18:04:26,998 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 18:04:37,489 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Bowser
+2020-11-08 18:04:37,490 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Bowser - Player Bowser registered
+2020-11-08 18:04:37,958 [WebSocketClient@2147370958-30] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Test - Player Bowser joined
+2020-11-08 18:04:37,961 [WebSocketClient@1436287817-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Bowser - Player Bowser joined
+2020-11-08 19:44:31,803 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 19:44:40,797 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Jhonny Test
+2020-11-08 19:44:40,799 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Test - Player Jhonny Test registered
+2020-11-08 19:44:41,425 [WebSocketClient@2083296704-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Test - Player Jhonny Test joined
+2020-11-08 19:44:52,003 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 19:45:02,976 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Sjors
+2020-11-08 19:45:02,977 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Sjors - Player Sjors registered
+2020-11-08 19:45:03,402 [WebSocketClient@2083296704-30] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Test - Player Sjors joined
+2020-11-08 19:45:03,405 [WebSocketClient@1237698907-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Sjors - Player Sjors joined
+2020-11-08 19:45:35,651 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Test - Select square in Jhonny Test's grid to place ships
+2020-11-08 19:45:37,758 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Sjors - Select square in Sjors's grid to place ships
+2020-11-08 20:17:26,525 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 20:17:31,549 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 20:17:39,289 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Jhonny test
+2020-11-08 20:17:39,291 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny test - Player Jhonny test registered
+2020-11-08 20:17:39,724 [WebSocketClient@1001416158-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny test - Player Jhonny test joined
+2020-11-08 20:17:48,356 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 20:17:54,754 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = test
+2020-11-08 20:17:54,755 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for test - Player test registered
+2020-11-08 20:17:55,197 [WebSocketClient@1001416158-30] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny test - Player test joined
+2020-11-08 20:17:55,199 [WebSocketClient@778999131-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for test - Player test joined
+2020-11-08 20:20:04,471 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 20:20:10,355 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 20:20:18,936 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Jhonny test
+2020-11-08 20:20:18,937 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny test - Player Jhonny test registered
+2020-11-08 20:20:19,649 [WebSocketClient@867246060-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny test - Player Jhonny test joined
+2020-11-08 20:20:27,002 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Smeef
+2020-11-08 20:20:27,003 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Smeef - Player Smeef registered
+2020-11-08 20:20:27,444 [WebSocketClient@867246060-30] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny test - Player Smeef joined
+2020-11-08 20:20:27,447 [WebSocketClient@370485979-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Smeef - Player Smeef joined
+2020-11-08 20:24:06,377 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 20:24:11,585 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 20:24:25,648 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Jhonny test
+2020-11-08 20:24:25,649 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny test - Player Jhonny test registered
+2020-11-08 20:24:26,374 [WebSocketClient@807732231-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny test - Player Jhonny test joined
+2020-11-08 20:24:36,818 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = test
+2020-11-08 20:24:36,819 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for test - Player test registered
+2020-11-08 20:24:37,266 [WebSocketClient@807732231-30] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny test - Player test joined
+2020-11-08 20:24:37,269 [WebSocketClient@2120863220-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for test - Player test joined
+2020-11-08 20:24:52,369 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 20:24:56,065 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 20:25:08,111 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = test
+2020-11-08 20:25:08,112 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for test - Player test registered
+2020-11-08 20:25:08,606 [WebSocketClient@929716234-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for test - Player test joined
+2020-11-08 20:25:14,862 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = test2
+2020-11-08 20:25:14,864 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for test2 - Player test2 registered
+2020-11-08 20:25:15,300 [WebSocketClient@929716234-30] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for test - Player test2 joined
+2020-11-08 20:25:15,303 [WebSocketClient@1535145665-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for test2 - Player test2 joined
+2020-11-08 20:27:33,851 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 20:27:38,037 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 20:27:45,560 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Jhonny
+2020-11-08 20:27:45,561 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny - Player Jhonny registered
+2020-11-08 20:27:46,205 [WebSocketClient@1087522105-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny - Player Jhonny joined
+2020-11-08 20:27:51,969 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Test
+2020-11-08 20:27:51,970 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Test - Player Test registered
+2020-11-08 20:27:52,413 [WebSocketClient@1087522105-30] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny - Player Test joined
+2020-11-08 20:27:52,417 [WebSocketClient@1123906562-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Test - Player Test joined
+2020-11-08 20:28:10,029 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny - Select square in Opponent's grid to fire
+2020-11-08 20:33:55,538 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 20:34:00,300 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 20:34:09,889 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = asdfg
+2020-11-08 20:34:09,890 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for asdfg - Player asdfg registered
+2020-11-08 20:34:10,527 [WebSocketClient@1641698411-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for asdfg - Player asdfg joined
+2020-11-08 20:34:12,369 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = asdfasdf
+2020-11-08 20:34:12,370 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for asdfasdf - Player asdfasdf registered
+2020-11-08 20:34:12,836 [WebSocketClient@1641698411-30] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for asdfg - Player asdfasdf joined
+2020-11-08 20:34:12,839 [WebSocketClient@1123906562-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for asdfasdf - Player asdfasdf joined
+2020-11-08 20:52:52,410 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 20:52:58,503 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 20:53:08,159 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Jhonny Test
+2020-11-08 20:53:08,161 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Test - Player Jhonny Test registered
+2020-11-08 20:53:08,831 [WebSocketClient@1089870328-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Test - Player Jhonny Test joined
+2020-11-08 20:53:15,386 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = boefje
+2020-11-08 20:53:15,387 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for boefje - Player boefje registered
+2020-11-08 20:53:15,833 [WebSocketClient@1089870328-30] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for Jhonny Test - Player boefje joined
+2020-11-08 20:53:15,836 [WebSocketClient@1048524399-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for boefje - Player boefje joined
+2020-11-08 20:54:58,782 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 20:55:02,846 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 20:55:09,415 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = sc
+2020-11-08 20:55:09,416 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for sc - Player sc registered
+2020-11-08 20:55:09,893 [WebSocketClient@1885174428-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for sc - Player sc joined
+2020-11-08 20:55:13,927 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = sdcsc
+2020-11-08 20:55:13,929 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for sdcsc - Player sdcsc registered
+2020-11-08 20:55:14,382 [WebSocketClient@1885174428-30] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for sc - Player sdcsc joined
+2020-11-08 20:55:14,385 [WebSocketClient@1783070281-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for sdcsc - Player sdcsc joined
+2020-11-08 20:57:00,126 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 20:57:05,887 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 20:57:10,857 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = saxasx
+2020-11-08 20:57:10,859 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for saxasx - Player saxasx registered
+2020-11-08 20:57:11,546 [WebSocketClient@56155371-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for saxasx - Player saxasx joined
+2020-11-08 20:57:16,487 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = asxax
+2020-11-08 20:57:16,488 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for asxax - Player asxax registered
+2020-11-08 20:57:16,941 [WebSocketClient@56155371-30] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for saxasx - Player asxax joined
+2020-11-08 20:57:16,944 [WebSocketClient@1048524399-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for asxax - Player asxax joined
+2020-11-08 20:57:47,317 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 20:57:50,407 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 20:57:58,791 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = sdc
+2020-11-08 20:57:58,793 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for sdc - Player sdc registered
+2020-11-08 20:57:59,452 [WebSocketClient@475049517-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for sdc - Player sdc joined
+2020-11-08 20:58:01,354 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = sdc
+2020-11-08 20:58:01,355 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for sdc - Player sdc registered
+2020-11-08 20:58:01,826 [WebSocketClient@475049517-30] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for sdc - Player sdc joined
+2020-11-08 20:58:01,829 [WebSocketClient@1206426480-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for sdc - Player sdc joined
+2020-11-08 20:58:46,454 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 20:58:49,807 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 20:59:03,634 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = test
+2020-11-08 20:59:03,635 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for test - Player test registered
+2020-11-08 20:59:04,325 [WebSocketClient@429864289-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for test - Player test joined
+2020-11-08 20:59:28,042 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = wed
+2020-11-08 20:59:28,043 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for wed - Player wed registered
+2020-11-08 20:59:28,493 [WebSocketClient@429864289-30] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for test - Player wed joined
+2020-11-08 20:59:28,496 [WebSocketClient@747964996-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for wed - Player wed joined
+2020-11-08 21:00:36,665 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 21:00:40,456 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 21:00:46,455 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = test3
+2020-11-08 21:00:46,456 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for test3 - Player test3 registered
+2020-11-08 21:00:47,075 [WebSocketClient@1048524399-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for test3 - Player test3 joined
+2020-11-08 21:00:50,623 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = test
+2020-11-08 21:00:50,624 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for test - Player test registered
+2020-11-08 21:00:51,114 [WebSocketClient@1048524399-30] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for test3 - Player test joined
+2020-11-08 21:00:51,117 [WebSocketClient@1405199175-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for test - Player test joined
+2020-11-08 21:04:35,650 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 21:04:46,644 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = test
+2020-11-08 21:04:46,645 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for test - Player test registered
+2020-11-08 21:04:47,130 [WebSocketClient@352888160-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for test - Player test joined
+2020-11-08 21:04:54,173 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 21:05:01,451 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = tesje
+2020-11-08 21:05:01,453 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for tesje - Player tesje registered
+2020-11-08 21:05:01,900 [WebSocketClient@352888160-30] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for test - Player tesje joined
+2020-11-08 21:05:01,903 [WebSocketClient@524863761-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for tesje - Player tesje joined
+2020-11-08 21:06:36,587 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 21:06:41,115 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 21:06:45,465 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = test
+2020-11-08 21:06:45,467 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for test - Player test registered
+2020-11-08 21:06:46,028 [WebSocketClient@618508858-27] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for test - Player test joined
+2020-11-08 21:06:53,613 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = sdf
+2020-11-08 21:06:53,614 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for sdf - Player sdf registered
+2020-11-08 21:06:54,139 [WebSocketClient@618508858-32] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for test - Player sdf joined
+2020-11-08 21:06:54,143 [WebSocketClient@1944876616-27] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for sdf - Player sdf joined
+2020-11-08 21:08:27,472 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 21:08:30,714 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 21:08:39,068 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = teasdc
+2020-11-08 21:08:39,069 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for teasdc - Player teasdc registered
+2020-11-08 21:08:39,723 [WebSocketClient@1533642850-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for teasdc - Player teasdc joined
+2020-11-08 21:08:41,900 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = sadfas
+2020-11-08 21:08:41,901 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for sadfas - Player sadfas registered
+2020-11-08 21:08:42,365 [WebSocketClient@1533642850-30] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for teasdc - Player sadfas joined
+2020-11-08 21:08:42,368 [WebSocketClient@854072413-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for sadfas - Player sadfas joined
+2020-11-08 21:08:54,346 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for sadfas - Select square in sadfas's grid to place ships
+2020-11-08 21:09:12,099 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 21:09:26,483 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 21:09:43,721 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = we
+2020-11-08 21:09:43,722 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for we - Player we registered
+2020-11-08 21:09:44,200 [WebSocketClient@1595257404-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for we - Player we joined
+2020-11-08 21:09:47,752 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = wefd
+2020-11-08 21:09:47,753 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for wefd - Player wefd registered
+2020-11-08 21:09:48,207 [WebSocketClient@1595257404-30] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for we - Player wefd joined
+2020-11-08 21:09:48,226 [WebSocketClient@1188476648-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for wefd - Player wefd joined
+2020-11-08 21:10:38,762 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 21:11:00,604 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 21:11:05,518 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = tsdc
+2020-11-08 21:11:05,519 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for tsdc - Player tsdc registered
+2020-11-08 21:11:17,968 [WebSocketClient@1967994111-27] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for tsdc - Player tsdc joined
+2020-11-08 21:11:30,057 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 21:14:39,603 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = wed
+2020-11-08 21:14:39,604 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for wed - Player wed registered
+2020-11-08 21:14:41,967 [WebSocketClient@1493759716-27] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for wed - Player wed joined
+2020-11-08 21:14:58,550 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 21:15:21,750 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 21:15:25,432 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 21:15:31,965 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = wed
+2020-11-08 21:15:31,966 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for wed - Player wed registered
+2020-11-08 21:15:32,620 [WebSocketClient@1785966541-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for wed - Player wed joined
+2020-11-08 21:15:35,276 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = wed
+2020-11-08 21:15:35,277 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for wed - Player wed registered
+2020-11-08 21:15:35,751 [WebSocketClient@1785966541-30] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for wed - Player wed joined
+2020-11-08 21:15:35,772 [WebSocketClient@393608702-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for wed - Player wed joined
+2020-11-08 21:18:01,456 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 21:18:06,599 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 21:18:13,720 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = test
+2020-11-08 21:18:13,721 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for test - Player test registered
+2020-11-08 21:18:14,240 [WebSocketClient@2136480013-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for test - Player test joined
+2020-11-08 21:18:18,439 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = test
+2020-11-08 21:18:18,440 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for test - Player test registered
+2020-11-08 21:18:18,899 [WebSocketClient@2136480013-30] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for test - Player test joined
+2020-11-08 21:18:18,901 [WebSocketClient@345200544-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for test - Player test joined
+2020-11-08 21:22:34,318 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 21:22:43,666 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 21:22:53,349 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = tyewf
+2020-11-08 21:22:53,350 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for tyewf - Player tyewf registered
+2020-11-08 21:22:54,014 [WebSocketClient@1405199175-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for tyewf - Player tyewf joined
+2020-11-08 21:22:56,878 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = sdf
+2020-11-08 21:22:56,880 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for sdf - Player sdf registered
+2020-11-08 21:22:57,323 [WebSocketClient@1405199175-30] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for tyewf - Player sdf joined
+2020-11-08 21:22:57,327 [WebSocketClient@1783070281-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for sdf - Player sdf joined
+2020-11-08 21:23:29,156 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 21:23:33,525 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = test
+2020-11-08 21:23:33,527 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for test - Player test registered
+2020-11-08 21:23:33,991 [WebSocketClient@1742177633-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for test - Player test joined
+2020-11-08 21:24:42,955 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 21:24:46,411 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 21:24:53,581 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = testt
+2020-11-08 21:24:53,582 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for testt - Player testt registered
+2020-11-08 21:24:54,097 [WebSocketClient@1783070281-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for testt - Player testt joined
+2020-11-08 21:24:59,029 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = sdsdf
+2020-11-08 21:24:59,030 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for sdsdf - Player sdsdf registered
+2020-11-08 21:24:59,467 [WebSocketClient@1783070281-30] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for testt - Player sdsdf joined
+2020-11-08 21:24:59,470 [WebSocketClient@1885174428-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for sdsdf - Player sdsdf joined
+2020-11-08 21:26:18,744 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 21:26:23,171 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 21:26:32,667 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = ttt
+2020-11-08 21:26:32,668 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for ttt - Player ttt registered
+2020-11-08 21:26:33,156 [WebSocketClient@425944883-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for ttt - Player ttt joined
+2020-11-08 21:26:35,414 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = test
+2020-11-08 21:26:35,415 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for test - Player test registered
+2020-11-08 21:26:35,860 [WebSocketClient@425944883-30] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for ttt - Player test joined
+2020-11-08 21:26:35,863 [WebSocketClient@1405199175-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for test - Player test joined
+2020-11-08 21:27:52,001 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 21:27:56,510 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 21:28:13,669 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = w
+2020-11-08 21:28:13,670 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for w - Player w registered
+2020-11-08 21:28:14,349 [WebSocketClient@1976726948-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for w - Player w joined
+2020-11-08 21:28:17,219 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = q
+2020-11-08 21:28:17,220 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for q - Player q registered
+2020-11-08 21:28:17,653 [WebSocketClient@1976726948-30] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for w - Player q joined
+2020-11-08 21:28:17,656 [WebSocketClient@1785966541-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for q - Player q joined
+2020-11-08 21:30:50,921 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 21:30:55,372 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 21:31:08,954 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = asdasd
+2020-11-08 21:31:08,955 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for asdasd - Player asdasd registered
+2020-11-08 21:31:09,587 [WebSocketClient@1875508108-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for asdasd - Player asdasd joined
+2020-11-08 21:31:11,527 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = asd
+2020-11-08 21:31:11,528 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for asd - Player asd registered
+2020-11-08 21:31:11,982 [WebSocketClient@1875508108-30] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for asdasd - Player asd joined
+2020-11-08 21:31:12,001 [WebSocketClient@2141307592-25] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for asd - Player asd joined
+2020-11-08 21:31:38,109 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 21:31:42,101 [JavaFX Application Thread] [INFO ] seabattlegui.SeaBattleApplication - Seabattle started
+2020-11-08 21:31:48,069 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = wqd
+2020-11-08 21:31:48,070 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for wqd - Player wqd registered
+2020-11-08 21:31:48,741 [WebSocketClient@910386111-27] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for wqd - Player wqd joined
+2020-11-08 21:31:53,630 [JavaFX Application Thread] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = wedwed
+2020-11-08 21:31:53,631 [JavaFX Application Thread] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for wedwed - Player wedwed registered
+2020-11-08 21:31:54,150 [WebSocketClient@910386111-32] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for wqd - Player wedwed joined
+2020-11-08 21:31:54,154 [WebSocketClient@1685106009-27] [DEBUG] seabattlegui.SeaBattleApplication - Show Message for wedwed - Player wedwed joined
