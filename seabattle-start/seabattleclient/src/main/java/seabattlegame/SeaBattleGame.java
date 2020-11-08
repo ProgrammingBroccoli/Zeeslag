@@ -57,7 +57,6 @@ public class SeaBattleGame implements ISeaBattleGame {
   @Override
   public void removeAllShips(int playerNr) {
     gameData.removeAllShips(playerNr);
-    throw new UnsupportedOperationException("Method removeAllShips()VISUAL not implemented.");
   }
 
   @Override
@@ -113,4 +112,6 @@ public class SeaBattleGame implements ISeaBattleGame {
   public int getNrOfShips(int playerNr) {
     return gameData.getNrOfShips(playerNr);
   }
+
+
 }

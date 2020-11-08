@@ -5,3 +5,20 @@
 2020-10-04 16:42:22,407 [main] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Some Name
 2020-10-05 09:42:36,027 [main] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Some Name
 2020-10-05 09:43:54,810 [main] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Some Name
+2020-11-08 14:21:45,262 [main] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = null
+2020-11-08 14:21:45,269 [main] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Some Name
+2020-11-08 14:21:45,278 [main] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Some Name
+2020-11-08 14:30:18,225 [main] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = null
+2020-11-08 14:30:18,233 [main] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Some Name
+2020-11-08 14:30:18,243 [main] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Some Name
+2020-11-08 14:30:57,223 [main] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = null
+2020-11-08 14:30:57,229 [main] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Some Name
+2020-11-08 14:30:57,232 [main] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Some Name
+2020-11-08 14:51:09,940 [main] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Some Name
+2020-11-08 14:53:29,267 [main] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Some Name
+2020-11-08 14:53:56,382 [main] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Some Name
+2020-11-08 14:54:15,410 [main] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Some Name
+2020-11-08 14:55:19,169 [main] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Some Name
+2020-11-08 14:57:10,659 [main] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Some Name
+2020-11-08 14:59:03,038 [main] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Some Name
+2020-11-08 15:02:27,465 [main] [DEBUG] seabattlegame.SeaBattleGame - ID = 1 Username = Some Name

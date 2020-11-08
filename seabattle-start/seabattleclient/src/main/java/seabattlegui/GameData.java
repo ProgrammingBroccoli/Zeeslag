@@ -44,6 +44,7 @@ public class GameData {
     public void getShip(int id){
         Ship returningShip = null;
         for (Ship ship : ships){
+
             if (ship.id == id){
                 returningShip = ship;
             }

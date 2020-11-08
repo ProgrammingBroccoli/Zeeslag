@@ -27,7 +27,7 @@ public class MockSeaBattleApplication implements ISeaBattleGUI {
     private ShotType lastShotPlayer = null;
     private ShotType lastShotOpponent = null;
     
-    private SquareState[][] playerGrid = new SquareState[XSIZE][YSIZE];
+    public SquareState[][] playerGrid = new SquareState[XSIZE][YSIZE];
     private SquareState[][] opponentGrid = new SquareState[XSIZE][YSIZE];
     
     @Override

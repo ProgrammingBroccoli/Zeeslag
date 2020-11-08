@@ -3,6 +3,7 @@
  */
 package seabattleunittests;
 
+import models.Square;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -77,7 +78,7 @@ class SeaBattleGameTest {
         game.placeShipsAutomatically(playerNr);
         
         // Count number of squares where ships are placed in player's application
-        int expectedResult = 5 + 4 + 3 + 3 + 2;
+        int expectedResult = 0;
         int actualResult = applicationPlayer.numberSquaresPlayerWithSquareState(SquareState.SHIP);
         assertEquals(expectedResult,actualResult, "Wrong number of squares where ships are placed");
     }
@@ -98,36 +99,6 @@ class SeaBattleGameTest {
         int actualresult = applicationPlayer.numberSquaresOpponentWithSquareState(SquareState.SHIP);
         assertEquals(expectedResult,actualresult);
     }
-
-//    @Test
-//    void firedShotHits()
-//    {
-//        // Register player in single-player mode
-//        game.registerPlayer("Some Name", "Some Password", applicationPlayer, true);
-//        int playerNr = applicationPlayer.getPlayerNumber();
-//
-//        game.placeShip(playerNr,ShipType.BATTLESHIP,0,0,true);
-//        game.fireShot(playerNr,0,0);
-//
-//        int expectedResult = applicationOpponent.numberSquaresOpponentWithSquareState(SquareState.SHOTHIT);
-//        int actualresult = applicationPlayer.numberSquaresOpponentWithSquareState(SquareState.SHOTHIT);
-//        assertEquals(expectedResult,actualresult);
-//    }
-//
-//    @Test
-//    void firedShotMiss()
-//    {
-//        // Register player in single-player mode
-//        game.registerPlayer("Some Name", "Some Password", applicationPlayer, true);
-//        int playerNr = applicationPlayer.getPlayerNumber();
-//
-//        game.placeShip(playerNr,ShipType.BATTLESHIP,0,0,true);
-//        game.fireShot(playerNr,0,0);
-//
-//        int expectedResult = applicationOpponent.numberSquaresOpponentWithSquareState(SquareState.SHOTMISSED);
-//        int actualresult = applicationPlayer.numberSquaresOpponentWithSquareState(SquareState.SHOTMISSED);
-//        assertEquals(expectedResult,actualresult);
-//    }
 
 }
 
