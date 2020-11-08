@@ -3,6 +3,7 @@
  */
 package seabattlegui;
 
+import com.google.gson.Gson;
 import communicatorclient.Communicator;
 import communicatorclient.CommunicatorClientWebSocket;
 import communicatorclient.CommunicatorMessage;
@@ -22,10 +23,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import models.Coord;
-import models.Ship;
-import models.Square;
-import models.User;
+import models.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import seabattlegame.ISeaBattleGame;
@@ -60,7 +58,7 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI, 
             "register", "ready", "fire"
     };
 
-
+    Gson gson = new Gson();
 
     //-----COMMUNICATOR  --------//
 
@@ -352,7 +350,7 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI, 
         buttonReadyToPlay.setOnAction(new EventHandler() {
             @Override
             public void handle(Event event) {
-                placeShipsAutomatically(999);
+                //placeShipsAutomatically(999);
                 notifyWhenReady();
             }
         });
@@ -795,6 +793,9 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI, 
             communicator.register(properties[0]);
             communicator.subscribe(properties[0]);
 
+            communicator.register(properties[1]);
+            communicator.subscribe(properties[1]);
+
             communicator.update(message);
 
         }else{
@@ -811,24 +812,44 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI, 
      * Place the player's ships automatically.
      */
     private void placeShipsAutomatically(int _playerNr) {
-        // Place the player's ships automatically.
-        Random random = new Random();
-        squareSelectedInOceanArea = true;
-        for (int i = 0; i < 5; i++){
-            Ship ship = null;
-            while (ship == null){
-                if(!game.shipPlaced(_playerNr, ShipType.values()[i])){
-                    if (_playerNr == 999){
-                        ship = placeShipAtSelectedSquare(ShipType.values()[i], random.nextBoolean(), random.nextInt(NRSQUARESHORIZONTAL), random.nextInt(NRSQUARESVERTICAL), opponentNr,opponentMap );
-                    }else {
-                        ship = placeShipAtSelectedSquare(ShipType.values()[i], random.nextBoolean(), random.nextInt(NRSQUARESHORIZONTAL), random.nextInt(NRSQUARESVERTICAL), playerNr, playerMap);
+        if(radioMultiPlayer.isSelected()){
+            // Place the player's ships automatically.
+            Random random = new Random();
+            squareSelectedInOceanArea = true;
+            for (int i = 0; i < 5; i++){
+                Ship ship = null;
+                while (ship == null){
+                    if(!game.shipPlaced(_playerNr, ShipType.values()[i])){
+                            ship = placeShipAtSelectedSquare(ShipType.values()[i], random.nextBoolean(), random.nextInt(NRSQUARESHORIZONTAL), random.nextInt(NRSQUARESVERTICAL), playerNr, playerMap);
+                        System.out.println("HULPLIJJN?!");
                     }
-
-                    System.out.println("HULPLIJJN?!");
+                    else break;
                 }
-                else break;
+            }
+        }else{
+            // Place the player's ships automatically.
+            Random random = new Random();
+            squareSelectedInOceanArea = true;
+            for (int i = 0; i < 5; i++){
+                Ship ship = null;
+                while (ship == null){
+                    if(!game.shipPlaced(_playerNr, ShipType.values()[i])){
+                        if (_playerNr == 999 && !radioMultiPlayer.isSelected()){
+                            ship = placeShipAtSelectedSquare(ShipType.values()[i], random.nextBoolean(), random.nextInt(NRSQUARESHORIZONTAL), random.nextInt(NRSQUARESVERTICAL), opponentNr,opponentMap );
+                        }else{
+                            ship = placeShipAtSelectedSquare(ShipType.values()[i], random.nextBoolean(), random.nextInt(NRSQUARESHORIZONTAL), random.nextInt(NRSQUARESVERTICAL), playerNr, playerMap);
+                        }
+
+                        System.out.println("HULPLIJJN?!");
+                    }
+                    else break;
+                }
             }
         }
+
+
+
+
 
     }
 
@@ -857,6 +878,19 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI, 
         playingMode = true;
         gameEnded = false;
         playerTurn = 1;
+
+        //SEND FIELD TO OPPONENT
+        communicator = CommunicatorClientWebSocket.getInstance();
+        communicator.addObserver(this);
+        communicator.start();
+        CommunicatorMessage message = new CommunicatorMessage();
+        message.setProperty(properties[1]);
+        ShipList list = new ShipList(playerName, game.getShips(1));
+
+        message.setContent(gson.toJson(list));
+//        communicator.register(properties[1]);
+//        communicator.subscribe(properties[1]);
+        communicator.update(message);
     }
 
     /**
@@ -1194,6 +1228,18 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI, 
             default:
             case "register" :
                 showMessage(content);
+                break;
+            case "ready":
+                ShipList ships = gson.fromJson(content, ShipList.class);
+                if (!ships.getName().equals(playerName)){
+                    //opponentMap = new Square[10][10];
+                    for (Ship ship : ships.getShips()){
+                        placeShipAtSelectedSquare(ship.shipType, ship.horizontal, ship.bowX, ship.bowY, 999, opponentMap);
+                    }
+                }
+
+                break;
+            case "fire":
                 break;
         }
     }
