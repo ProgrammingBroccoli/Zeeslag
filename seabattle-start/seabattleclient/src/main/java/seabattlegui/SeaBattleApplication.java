@@ -35,7 +35,7 @@ import java.util.*;
  * Main application of the sea battle game.
  * @author Nico Kuijpers
  */
-public class SeaBattleApplication extends Application implements ISeaBattleGUI {
+public class SeaBattleApplication extends Application implements ISeaBattleGUI, Observer {
 
     private static final Logger log = LoggerFactory.getLogger(SeaBattleApplication.class);
 
@@ -91,7 +91,6 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
     private Rectangle[][] squaresOceanArea;
     private Square[][] playerMap;
     private Square[][] opponentMap;
-
     // Sea battle game
     private ISeaBattleGame game;
 
@@ -135,7 +134,6 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
     // X and y-position of selected square in ocean region
     private int selectedSquareX;
     private int selectedSquareY;
-
 
     @Override
     public void start(Stage primaryStage) {
@@ -1148,5 +1146,10 @@ public class SeaBattleApplication extends Application implements ISeaBattleGUI {
             }
         }
         return result;
+    }
+
+    @Override
+    public void update(Observable o, Object arg) {
+
     }
 }

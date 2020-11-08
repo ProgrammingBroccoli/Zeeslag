@@ -6,14 +6,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="communicatorserver" />
         <module name="seabattleclient" />
-        <module name="seabattleserver" />
+        <module name="communicatorshared" />
+        <module name="communicatorclient" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="communicatorclient" target="11" />
+      <module name="communicatorserver" target="11" />
+      <module name="communicatorshared" target="11" />
       <module name="seabattleclient" target="11" />
       <module name="seabattleserver" target="11" />
       <module name="SeaBattleStart" target="11" />
+      <module name="untitled" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
